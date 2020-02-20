@@ -1,0 +1,106 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+        <input type="text" placeholder="search by name" style="width:300px;margin-top:20px;" [(ngModel)]=" searchTerm"/>
+        <div class="row" style="margin-top:20px;" >
+            <div class="col-sm-3"  *ngFor="let Patient of Patients | patientFilter: searchTerm; index as i">
+           
+        <div class="card" style="margin-bottom:20px" >
+          
+          <div class="card-body"  (click)="mouseclick(i)">
+            <p class="card-text">FirstName:{{Patient.firstname}}</p>
+            
+            <p class="card-text" >Lastname:{{Patient.lastname}}</p>
+            <p class="card-text">Gender:{{Patient.Gender}}</p>
+            <p class="card-text">Date:{{Patient.date}}</p>
+            <p class="card-text">Patientclinic problem:{{Patient.Clinical}}</p>
+
+            
+            Image: {{Patient.imgPath}}
+            Image: {{Patient.file}}
+            <img [src]="Patient.imgURL" style="width:30px;">
+        <!-- Image{{Patient.imgPath}}-->
+        <hr>
+        <div class="row">
+          <button class="btn btn-outline-info" (click)="viewPatient()"  style="margin-right:5px;margin-left:15px">View</button>
+          <button class="btn btn-outline-info" (click)="editPatient(Patient.firstname)" style="margin-right:5px">Edit</button>
+          <button class="btn btn-outline-danger" (click)="deletePatient(i)" style="margin-right:5px">Delete</button>
+          </div>
+         
+          </div>
+         
+        </div>
+       
+        </div>
+        
+
+
+       
+
+
+               
+      </div>
+                           
+                        
+                
+        </div>
+        
+     
+
+
+       <!-- <div class="row" style="margin-top:20px;">
+                <div class="col-sm-3">
+            <div class="card" style="padding-bottom:200px;">
+              
+              <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-text"></p>
+                <a href="#" class="btn "></a>
+              </div>
+            </div>
+            </div>
+            
+    
+    
+            <div class="col-sm-3">
+                    <div class="card" style="padding-bottom:200px;">
+                      
+                      <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text"></p>
+                        <a href="#" class="btn "></a>
+                      </div>
+                    </div>
+                    </div>
+    
+    
+                    <div class="col-sm-3">
+                            <div class="card" style="padding-bottom:200px;">
+                              
+                              <div class="card-body">
+                                <h4 class="card-title"></h4>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn "></a>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                    <div class="card" style="padding-bottom:200px;">
+                                      
+                                      <div class="card-body">
+                                        <h4 class="card-title"></h4>
+                                        <p class="card-text"></p>
+                                        <a href="#" class="btn "></a>
+                                      </div>
+                                    </div>
+                                    </div>
+                                    
+                            
+                    
+            </div>-->
+            
+         
+
+    
+      
+   

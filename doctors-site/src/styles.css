@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+ body{
+    background-image: url("src/assets/images/abs1.jpg");
+  
+    min-height: 800px;
+    width:100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+ }
+ 
+ 
+    

@@ -1,0 +1,209 @@
+
+
+
+<!--<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Clinical conditions</label>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="patient.Crowding" name="Crowding">Crowding
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Deepbite" name="Deepbite">Deepbite
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Spacing" name="Spacing">Spacing
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Nanow" name="Nanow">Nanow arch
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Open" name="Open">Open bite
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Overjet" name="Overjet">Overjet
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Anterior" name="Anterior">Anterior crossbite
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Misshapen" name="Misshapen">Misshapen teeth
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Uneven" name="Uneven">Uneven smile
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Flared" name="Flared">Flared teeth
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Narrow" name="NEXT">Narrow arch
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox" [(ngModel)]="Class11div1" name="Class11div1">Class II div 2
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]="Posterior" name="Posterior">Posterior crossbite
+        </div>
+        <div class="col-sm-2">
+          <input type="checkbox"  [(ngModel)]="Class11div2" name="Class11div2"> Class II div 1
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <button (click)="saveeditclinic()">submit</button>
+      </div>
+      </div>
+
+      </form>
+ </div>
+
+
+
+ <div class="row" style="margin-top:20px;" >
+        <button type="submit" style="margin-left:125px; margin-right:50px;background-color: #00ccff;" routerLink="/editpatient" class="btn " >BACK</button>
+        <button type="submit" style=" margin-right:880px;" class="btn btn-outline-danger" >CANCEL</button>
+     
+        <button type="submit" class="btn" style="background-color: #00ccff" routerLink="/editpic">NEXT</button>
+    
+     
+      </div>-->
+    
+   
+       
+
+      
+<app-navbar></app-navbar>
+<div class="container">
+        <!--<input type="text" placeholder="search by name" style="width:300px;margin-top:20px;" [(ngModel)]=" searchTerm"/>-->
+        <div class="row" style="margin-top:20px;" >
+          
+            <div class="col-sm-12"  *ngFor="let Patient of Patients | patientFilter: searchTerm; index as i">
+          
+     
+        <div class="card  ">
+        
+        
+          <div class="card-body"  (click)="mouseclick()"  >
+            <p class="card-text">FirstName:{{Patient.firstname}}</p>
+            
+            <p class="card-text" >Lastname:{{Patient.lastname}}</p>
+            <p class="card-text">Gender:{{Patient.gender}}</p>
+            <p class="card-text">Date:{{Patient.date}}</p>
+            <p class="card-text">Patientclinic problem:{{Patient.Clinical}}</p>
+
+            Image: {{Patient.imgPath}}
+      
+            <img [src]="Patient.PhotoPath">
+        
+        <!-- Image{{Patient.imgPath}}-->
+        <hr>
+        <div class="row">
+          <button class="btn btn-outline-info" (click)="viewPatient()"  style="margin-right:5px;margin-left:15px">View</button>
+          <button class="btn btn-outline-info" (click)="editPatient(Patient.firstname)" style="margin-right:5px">Edit</button>
+          <button class="btn btn-outline-danger" (click)="deletePatient(i)">Delete</button>
+          </div>
+ 
+         
+        </div>
+
+
+       
+       </div>
+
+       
+        </div>
+        
+
+
+       
+
+
+               
+                                
+                        
+                
+        </div>
+        
+     
+
+
+       <!-- <div class="row" style="margin-top:20px;">
+                <div class="col-sm-3">
+            <div class="card" style="padding-bottom:200px;">
+              
+              <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-text"></p>
+                <a href="#" class="btn "></a>
+              </div>
+            </div>
+            </div>
+            
+    
+    
+            <div class="col-sm-3">
+                    <div class="card" style="padding-bottom:200px;">
+                      
+                      <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text"></p>
+                        <a href="#" class="btn "></a>
+                      </div>
+                    </div>
+                    </div>
+    
+    
+                    <div class="col-sm-3">
+                            <div class="card" style="padding-bottom:200px;">
+                              
+                              <div class="card-body">
+                                <h4 class="card-title"></h4>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn "></a>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                    <div class="card" style="padding-bottom:200px;">
+                                      
+                                      <div class="card-body">
+                                        <h4 class="card-title"></h4>
+                                        <p class="card-text"></p>
+                                        <a href="#" class="btn "></a>
+                                      </div>
+                                    </div>
+                                    </div>
+                                    
+                            
+                    
+            </div>-->
+            
+         
+
+      </div>
+      
+      
+   
