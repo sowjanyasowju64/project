@@ -1,0 +1,53 @@
+
+        
+
+<div class="container">
+    <!-- <div class="btun">
+           Salary Component(Group:)     
+          <button  style="float: right; margin-left: 10px; margin-bottom: 10px;" mat-raised-button color="primary" routerLink="/formula-salary">New</button> 
+       
+          <button  style="float: right;" mat-raised-button color="primary" routerLink="/salary">Go to Group</button>
+    </div>  -->
+          
+    
+    <table class="table table-bordered">
+       
+           
+  
+          <tr>
+   
+              <th scope="col"> Code</th>
+              <th scope="col">Type</th>
+              <th scope="col">Taxable</th>
+              <th scope="col">Attendance Based</th>
+              <th scope="col">Included In CTC</th>
+              <th scope="col">Is Active</th>
+              <th scope="col">Value/Formula</th>
+              <th scope="col">Balance Amount Item</th>
+              <th scope="col">Test Amount</th>
+              <th scope="col">Action</th>
+              <th> <button  style=" background-color:rgb(16, 199, 223); float: right; margin-left: 10px; margin-bottom: 10px;" mat-raised-button color="primary" routerLink="/formula-salary">New</button> </th>
+          </tr>
+              <tbody>
+                <tbody *ngFor="let salf of formulas index as i">
+                  <tr>
+           
+                     <td>{{salf.code}}</td>
+                     <td>{{salf.type}}</td>
+                     <td>{{salf.taxable}}</td>
+                     <td>{{salf.attendancebased}}</td>
+                     <td>{{salf.included}}</td>
+                     <td>{{salf.isactive}}</td>
+                     <td>{{salf.Value}}</td>
+                     <td>{{salf.balance}}</td>
+                     <td>{{salf.testamount}}</td>
+            <td>{{salf.action}} <a  class= "a" routerLink="/salary1">Edit</a> <br>
+                    <a class= "a" routerLink="/salary1" (click)=removeeducation(i)  style="color: red;">Delete</a> </td> 
+                   </tr>
+                 
+          
+              </tbody>
+            </table>
+            </div> 
+
+  

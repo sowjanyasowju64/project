@@ -1,0 +1,49 @@
+
+
+           
+
+            <div>
+                 
+              <table class="TFtable" id="contentToConvert">  
+
+                  
+                <tr >   
+                <th> Bank Name</th><th>Account Name</th>  <th>Account Type</th>  <th>Ifsc Code</th> 
+                
+                <th><button mat-raised-button style=" background-color: #3AB1CF;  color: white; margin-right: 3px;" (click)="addbank()">ADD</button></th>
+                
+                <th><button mat-raised-button   color="warn" (click)="removebank(i)">REMOVE</button></th>
+             
+                </tr>  
+                
+                <tr   *ngFor="let bank of bank; let i = index;">  
+               
+               
+
+                <td><input type="text"  [(ngModel)]="bank.bankname"  name="bankname" ></td>  
+                <td><input type="text"   [(ngModel)]="bank.accountname"  name="accountname"></td>  
+                
+                <td><input type="text" [(ngModel)]="bank.accounttype" name="accounttype"></td>
+                <td><input type="text"  [(ngModel)]="bank.ifsccode"  name="ifsccode"></td>  
+
+
+               
+              
+                
+                
+                </tr>  
+                
+                </table> 
+               
+             
+               
+            </div>
+            <div id="content" #content>  
+  
+   
+              <div style="float:right;margin-right:10px;">  
+                <button type="button" value="PDF"  class="btn btn-primary" (click)="captureScreen()">PDF</button>
+              </div>  
+            
+            </div> 
+            

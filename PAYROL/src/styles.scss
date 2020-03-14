@@ -1,0 +1,125 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$PAYROL-primary: mat-palette($mat-indigo);
+$PAYROL-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$PAYROL-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$PAYROL-theme: mat-light-theme($PAYROL-primary, $PAYROL-accent, $PAYROL-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($PAYROL-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-sidenav {
+    width: 220px;
+    color:white;
+   
+}
+.mat-drawer { 
+    background-color:#08849C;
+    color:#fff
+}
+
+.mat-drawer :hover{
+
+    color: #3AB1CF; 
+}
+.main-content {
+    padding:9px;
+}
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+li{
+   list-style-type:none;
+   padding-top:30px;
+
+   
+}
+ul {
+   list-style-type:none;
+  
+ }
+ a {
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    
+   }
+   .main-content{
+      
+       height:100%;
+   }
+   button , a{
+    text-decoration: none !important;
+   
+}
+    button:hover{
+      background-color: white;
+
+   }
+
+   .mat-tab-label {
+   
+    background-color: transparent;
+   color:black;
+    
+  }
+  
+  /* Styles for the active tab label */
+  .mat-tab-label.mat-tab-label-active{
+   
+    background-color:#0a88a1;
+  color:white;
+  
+  }
+  .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background: #ccad00;
+  }
+  .mat-toolbar{
+    z-index: 999;
+    position: fixed
+  }
+  .mat-tab-group{
+    margin-top:55px !important;
+  }
+  .mat-tab-header{
+    z-index: 999;
+     width:100vw;
+   position: fixed  !important;
+    background-color: white!important;
+ }
+ .mat-tab-body-wrapper{
+  position: relative !important;
+   margin-top:55px;
+ }
+//  @media screen and (min-width: 950px) {
+//   body {
+//     background-color: white;
+//   }
+// }
+
+

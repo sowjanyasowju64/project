@@ -1,0 +1,233 @@
+ 
+<!--<mat-sidenav-container fullscreen>
+        <mat-sidenav mode="side" #sidenav opened position="start">
+            <img   src="assets/download.png">
+            <ul>
+         <li><a routerLink="/home-tabs" >HOME</a></li>
+         <li><a href="" >EMPLOYEE</a></li>
+         <li><a routerLink="/joining-tabs" >JOINING</a></li>
+         <li><a href="" >APPOINTMENT</a></li>
+         <li><a href="" >DEPARTMENT</a></li>
+         <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+         <li><a href="" >PAYROLL</a></li>
+         <li><a href="" >APPRISAL</a></li>
+         <li><a href="" >SEPARATION</a></li>
+         <li><a href="" >RELIVING</a></li>
+         <li><a href="" >TICKET</a></li>
+         
+        </ul>
+      
+    
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+            ENVISION INTEGRATED SERVICES PVT.LTD
+            
+            <span class="toolbar-spacer"></span>
+            <button style="padding-right:3px; margin:20px;" mat-raised-button color="primary"
+  matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+Notifications
+</button>
+          
+<button  routerLink="/login"  mat-raised-button color="primary">
+LOGIN
+</button>
+          </mat-toolbar>
+
+          <div class="main-content">
+
+                <div>  
+                        Select Product :  
+                        <select  [(ngModel)]="ProductHeader.name" (ngModelChange)="SearchProduct(ProductHeader.name)">  
+                             <option *ngFor="let prod of ProductHeader">{{prod.name}} </option>  
+                         </select>  
+                
+                
+                
+                <div *ngIf="ProductHeader.name">  
+                <h5>You have selected: {{ProductHeader.name}} dates </h5>  
+                </div>  
+                </div>  
+                <div>  
+                <h4>Attendence  Details:</h4>  
+                <table class="TFtable">  
+                <tr >   
+                <th>Dates</th> <th>INTIME</th>  <th>OUT_TIME</th> <th>DURATION</th>  
+                </tr>  
+                <tr  *ngFor="let Prod of monthsDetails">  
+                <td>{{Prod.dates}}</td>  
+                <td><input type="text"></td>  
+                <td><input type="text"></td>  
+                <td><input type="text"></td>  
+                </tr>  
+                
+                </table>  
+                </div>  
+                
+
+                <div class="example-container"
+                [class.mat-elevation-z2]="!isActive"
+                [class.mat-elevation-z8]="isActive">
+
+                <div >
+                 
+                   
+                  <select  class="ym" (change)="firstDropDownChanged($event.target.value)" >
+                   
+                    <option>Select</option>
+                    <option *ngFor='let v of _values1'>{{ v }}</option>
+                  </select>
+            
+                  <select  class="ym" (change)="firstDropDownChanged1($event.target.value)">
+                 <option>Select</option>
+                    <option *ngFor='let v of _values2'>{{ v }}</option>
+                  </select>
+                
+                </div>
+
+
+                
+                <div>
+                 
+                  <table class="TFtable">  
+
+                      <tbody>
+                    <tr >   
+                    <th>DATES</th><th>PROJECT CODE </th>  <th>INTIME</th>  <th>OUTTIME</th> <th>DURATION</th>   <th>TYPE OF LEAVES</th> <th>PM(Hours)</th> <th>STATUS</th> <th>REMARKS</th>  <th>TASK</th>
+                    </tr>  </tbody>
+                   
+                 
+                    <tbody>
+                     
+                    <tr  *ngFor="let Prod of this._values3"> 
+                       
+                   
+                    <td>{{Prod.dates}}</td>  
+
+                    <td><input type="text"></td>  
+                    <td><input type="text"></td>  
+                    <td><input type="text"></td>  
+                    <td><input type="text"></td>
+                  
+                    <td><select class="leaves">
+                     
+                        <option> </option>
+                      <option>Casual Leave </option>
+                      <option>Paid Leave </option>
+                      <option>Loss of pay </option>
+                      <option>Comp off Leave </option>
+                    </select></td>
+                    <td><input type="text"></td>  
+                    <td><select class="leaves">
+                        <option> </option>
+                      <option>Approval</option>
+                      <option>Rejected </option>
+                    
+                    </select></td> 
+                    <td><input type="text" ></td>  
+                    <td><textarea rows="3" cols="20"></textarea></td>  
+                    
+                    </tr>  
+                    </tbody>
+                    
+                    </table> 
+                   
+                </div>
+
+
+
+               
+
+
+
+
+                <table class="table table-bordered"  >
+                  
+                    <thead>
+                        <tr  >
+                          <th scope="col">S.No</th>
+                          <th scope="col">Month</th>
+                          <th scope="col">No of days</th>
+                          <th scope="col">APL</th>
+                          <th scope="col">ACL</th>
+                         
+                          <th scope="col">NLM</th>
+                          <th scope="col">EPL</th>
+                          <th scope="col">PLCF</th>
+                          <th scope="col">APL</th>
+                          <th scope="col">ECL</th>
+                          <th scope="col">CLF</th>
+                          <th scope="col">Total CO</th>
+                          <th scope="col">NPD</th>
+                          <th scope="col">LP</th>
+                          <th scope="col">NPD</th>
+                          <th scope="col">Remarks</th>
+
+                        </tr>
+                   
+
+
+                    <tbody  >
+                       
+                      <tr   *ngFor="let Prod of this._values2 ; let i=index; ">
+
+
+                        <th scope="row">{{i+1}}</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                      </tr>
+                     
+                     
+
+                      
+                        
+                        
+                            
+                             
+
+                                
+
+                                
+
+
+                                   
+
+
+                                      
+                    </tbody>
+                  </table>
+
+
+
+
+                </div>
+                
+
+         
+
+            
+           </div>
+           </mat-sidenav-content>
+           </mat-sidenav-container>-->
+
+
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,43 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <img   src="https://media.licdn.com/dms/image/C4D0BAQF6qkgvM_l5Ig/company-logo_200_200/0?e=2159024400&v=beta&t=Fb0HH8Mahl-kjRxKvS4CtX7VvJ7Y4yWwjnhvOUmPs60" width="150" height="200" >
+        <ul>
+     <li><a routerLink="/home-tabs" >HOME</a></li>
+     <li><a routerLink="/hr-details">EMPLOYEE</a></li>
+     <li><a routerLink="/joining-tabs" >JOINING</a></li>
+     <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+     <li><a href="" >DEPARTMENT</a></li>
+     <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+     <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+     <li><a routerLink="/payslip">PAYROLL</a></li>
+     <li><a href="" >APPRISAL</a></li>
+     <li><a href="" >SEPARATION</a></li>
+     <li><a href="" >RELIVING</a></li>
+     <li><a href="" >TICKET</a></li>
+     
+    </ul>
+  
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar style="background-color: #08849C;" >
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon style="color: white;">menu</mat-icon>
+        </button> 
+    <h6 style="color: white;">
+    Envision  integrated service PVT.LTD  </h6>
+        
+        <span class="toolbar-spacer"></span>
+        <button  routerLink="/login"  mat-raised-button style="background-color: white;">
+          LOGIN
+          </button>
+      </mat-toolbar>
+      <div class="main-content">
+        
+
+        
+      </div>
+    
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

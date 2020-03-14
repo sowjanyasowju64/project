@@ -1,0 +1,22 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%; 
+  }
+
+.example{
+  width:100%;
+  
+}
+.mat-success {
+  background-color: #3AB1CF;
+  color: #fff;
+}
+th{
+  text-align:center;
+  background-color:#c7c9c9;
+  color:#212121;
+}

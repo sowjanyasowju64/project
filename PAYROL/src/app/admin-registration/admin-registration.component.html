@@ -1,0 +1,44 @@
+<div class="registration-container">
+    
+        <div class="registration-content">
+         <h5  style="text-align: center;font-size:23px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Envision Integrated Services Pvt Ltd</h5>
+          <!-- <mat-toolbar class="registration-toolbar" color="primary">My App</mat-toolbar> -->
+          <img class="card-img-top" src="assets/img/download.png" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;height:170px;padding-bottom: 30x;">
+         
+          <mat-card>
+            <h5  style="margin-bottom:10px;text-align: center;font-size:23px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #6dd5ed;">Admin registration</h5>
+            <form [formGroup]="AdminregistrationForm" novalidate (ngSubmit)="onSubmit()">
+              <mat-form-field>
+                <mat-icon matPrefix>person_outline</mat-icon>
+                <input autofocus type="text" matInput placeholder="Username" formControlName="empid">
+                <mat-error *ngIf="!AdminregistrationForm.controls['empid'].valid && AdminregistrationForm.controls['empid'].touched">
+                      Empolyee Id is required
+                </mat-error>
+              </mat-form-field>
+      
+                <mat-form-field>
+                <input type="text" autocomplete="false" matInput placeholder="Role" formControlName="role">
+                <mat-error *ngIf="!AdminregistrationForm.controls['role'].valid && AdminregistrationForm.controls['role'].touched">
+                        Role is required
+                  </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                    <mat-icon matPrefix>lock_outline</mat-icon>
+                    <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="!AdminregistrationForm.controls['password'].valid && AdminregistrationForm.controls['password'].touched">
+                           Password is required
+                    </mat-error>
+             </mat-form-field>
+             <mat-form-field>
+                    <mat-icon matPrefix>lock_outline</mat-icon>
+                    <input type="password" autocomplete="false" matInput placeholder="Confirm Password" formControlName="confirmpassword">
+                    <mat-error *ngIf="!AdminregistrationForm.controls['confirmpassword'].valid && AdminregistrationForm.controls['confirmpassword'].touched">
+                            Confirm Password is required
+                    </mat-error>
+             </mat-form-field> 
+      
+              <button type="submit" mat-raised-button color="info" style="background-color: #08849C; color:white;">Registration</button>
+            </form>
+          </mat-card>
+        </div>
+      </div>

@@ -1,0 +1,759 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <img   src="assets/img/download.png" style="width:100%;height:10%">
+        <ul>
+     <li><a routerLink="/home-tabs" >HOME</a></li>
+     <li><a routerLink="/hr-details" >HR</a></li>
+     <li><a routerLink="/joining-tabs" >JOINING</a></li>
+     <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+     <li><a href="" >DEPARTMENT</a></li>
+     <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+     <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+     <li><a routerLink="/payslip" >PAYROLL</a></li>
+     <li><a routerLink="/apprisal" >APPRISAL</a></li>
+     <li><a href="" >SEPARATION</a></li>
+     <li><a href="" >RELIVING</a></li>
+     <li><a href="" >TICKET</a></li>
+     
+    </ul>
+  
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <mat-toolbar style="background-color: #08849C;">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon style="color: white;">menu</mat-icon>
+        </button>
+        <h6 style="color: white;">
+          
+          ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+ 
+        <span class="toolbar-spacer"></span>
+        <button  mat-raised-button style="background-color: white;"
+  matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+Notifications
+</button>
+<button  routerLink="/login"  mat-raised-button style="background-color: white; margin-left: 10px;">
+  LOGIN
+  </button>
+  </mat-toolbar>
+
+
+
+<div class="container-fluid">
+    
+<div class="container" >
+        <!--<input type="text" placeholder="search by name" style="width:300px;margin-top:20px;" [(ngModel)]=" searchTerm"/>-->
+   <div class="row" style="margin-top:10px;" >
+    <div class="col-sm-12"     id="contentToConvert">
+  
+               
+                  <table class=" table table-bordered" *ngFor="let emp of employee;let i=index" >
+
+                      <thead>
+                            <tr class="table table-info ">
+                                    <th colspan="2">
+                                          <h6 style="text-align: center;">ANNEXURE - A</h6>  
+                                    </th>   
+                            </tr> 
+                          <tr class="table table-info "> 
+                              <th>EMPLOYEE</th>
+                              <th>DETAILS</th>
+                           
+                          </tr>
+                      </thead>
+               
+                      <tbody>
+                          <tr>
+                              <td>Employee ID </td>
+                              <td>{{i+0001}}</td>
+                          </tr>
+               
+                          <tr>
+                              <td>First Name </td>
+                              <td>{{emp.firstname}}</td>
+                          </tr>
+                        <!-- </tbody>
+                </table> -->
+                  <!-- <table  class="table table-bordered" *ngFor="let use of user" > -->
+                          <tr  *ngFor="let use of user" >
+                                <td>PermanentAddress</td>
+                             <td> {{use.paddress}}</td>
+                                
+                            </tr>
+                            <tr  *ngFor="let use of user" >
+                                <td>Presentaddress</td>
+                                <td>
+                              {{use.presentaddress}}</td>
+  
+                            </tr>
+                        <!-- </tbody>
+                </table> -->
+                  <!-- </table> -->
+                  <!-- <table class="table table-bordered" *ngFor="let emp of employee;let i=index">
+                      <tbody> -->
+                          <tr>
+                              <td>Status </td>
+                              <td>{{emp.status}}</td>
+                          </tr>
+                         
+                          <!-- <tr>.
+                              <td>Official Mail </td>
+                              <td>{{emp.fmail}}</td>
+                          </tr>
+                          <tr>
+                              <td>Personal Mail </td>
+                              <td>{{emp.pmail}}</td>
+                          </tr>
+                          <tr>
+                              <td>phone Number </td>
+                              <td>{{emp.phonenumber}}</td>
+                          </tr> -->
+                          <tr>
+                                  <td>Date of Joining </td>
+                                  <td>{{emp.date}}</td>
+                              </tr>
+                          <tr>
+                              <td>Work Type </td>
+                              <td>{{emp.wtype}}</td>
+                          </tr>
+                          <tr>
+                                  <td>Work Pattern </td>
+                                  <td>{{emp.wp}}</td>
+                              </tr>
+                          <tr>
+                              <td>Level  </td>
+                              <td>{{emp.level}}</td>
+                          </tr>
+                          <tr>
+                              <td>Payroll-Type </td>
+                              <td>{{emp.pay}}</td>
+                          </tr>  <tr>
+                              <td>Designation </td>
+                              <td>{{emp.designation}}</td>
+                          </tr>
+                           <tr>
+                                <td>Department </td>
+                                <td>{{emp.department }}</td>
+                            </tr>
+
+                          <tr>
+                              <td>CTC </td>
+                              <td>{{emp.ctc}}</td>
+                          </tr>
+                          <tr>
+                              <td>Agreement </td>
+                              <td>{{emp.agreement}}</td>
+                          </tr>
+                          <tr>
+                              <td>Notice Period </td>
+                              <td>{{emp.nperiod}}</td>
+                          </tr>
+                        
+                          <tr>
+                                  <td>Job Location </td>
+                                  <td>{{emp.job}}</td>
+                          </tr>
+                          <!-- <tr>
+                              <td>Date of relieving </td>
+                              <td>{{emp.relieving}}</td>
+                          </tr> -->
+  
+                       
+                      </tbody>
+                  </table>
+       </div>
+  
+        </div>
+                
+        </div>
+
+
+<table class="table table-bordered" id="contentToConvert" *ngFor="let emp of employee;let i=index"> 
+        <thead>
+             <tr class="table table-info ">
+                    <th colspan="2">
+                            <h6 style="text-align: center;">Annexure – B</h6>  
+                     </th>   
+            </tr> 
+       
+             
+        </thead>
+        <tbody>
+                <tr class="table table-info">
+                        <th scope="col">#</th>
+                        <td scope="col">
+                                <h6>COMPENSATION & BENEFITS</h6>  
+                         </td>   
+                </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td scope="col">
+               	Your total Annual Salary (CTC) will be Rs.{{emp.ctc}}/-. The detailed compensation structure is described in Annexure- C.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+        	Your salary will be reviewed periodically as per Company policy. However, changes in your compensation are discretionary and will be based on effective performance results during the period and other relevant criteria. 
+            </td>
+          
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+        	For purpose of contribution to Provident Fund, computations will be on the basic component of the remuneration package and as per relevant & applicable rules and regulations.
+            </td>
+          </tr>
+          <tr>
+              <th scope="row">4</th>
+              <td>
+         	Please note that the remuneration structure may be altered / modified at any time without prior notice and your remuneration and other terms may accordingly be altered/modified from time to time. Further, all other payments/benefits will be governed by the Company's rules as well as statutory provisions in force from time to time and subject to deduction of appropriate taxes at source.
+              </td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>
+        	Your remuneration package is strictly confidential between you and the Company and should not be discussed with any one nor divulged to anyone in any manner whatsoever.
+            </td>
+          </tr>
+          <tr>
+                <th scope="row">6</th>
+                <td>
+        	Employees in India are normally paid their monthly remuneration through bank every month.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 > KYC & EDUCATIONAL DOCUMENTS</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">7</th>
+                <td>	List of checklist documents is described in Annexure- C
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >PERIOD OF SERVICE</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">8</th>
+                <td>	Executing a One year’ training cum service agreement with the company. </td>
+         </tr>
+         <tr>
+             <th scope="row">9</th>
+         <td>	One month probation period, you will be continuously evaluated. In case you do not complete the probation period to our satisfaction, the probation period may be extended. </td>
+        </tr>
+        <tr>
+                <th scope="row">10</th>
+                <td>	On successful completion of probation period, your services will be confirmed and confirmation letter will be issued to you. </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >HOURS OF WORK </h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">11</th>
+                <td>	
+                     	The working hours applicable to you will be dependent upon your place of posting. Further, you should be prepared to work on any shift, as may be warranted by the Company's/ Client's work requirements. Depending on Organizational requirement or project contingencies, your working hours may be modified / altered from time to time. You may also be required to work on holidays/weekends depending on the nature of the project's.
+                </td>
+         </tr>
+         <tr>
+                <th scope="row">12</th>
+                <td>	
+            The Company does not make overtime payments for extra hours worked, if any.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6>LEAVES & HOLIDAYS</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">13</th>
+                <td>	
+            	You will be entitled for Leave of 18 days (12 Paid leaves and 6 Casual leaves ) per calendar year on a prorate basis from your date of joining. Earned leave will be credited to your account on a monthly basis.  	
+                </td>
+         </tr>
+         <tr>
+                <th scope="row">14</th>
+                <td>	
+            You will be eligible for encashment of Paid leaves as per the Basic Component of your salary .
+                </td>
+         </tr>
+         <tr>
+                <th scope="row">15</th>
+                <td>	
+                  As each region may have a different set of holidays, your holiday calendar will be governed by your office/client location.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >UNAUTHORISED ABSENCE FROM WORK</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">16</th>
+                <td>	
+    	Your unauthorized absence from work for a continuous period of more than 3 days or more will be treated as absconding from duty, and in the event of your not reporting to work. Organizational Development team will take necessary action on absconding employee process.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >RETIREMENT AGE</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">17</th>
+                <td>	
+        	All employees in the company shall retire on attainment of normal retirement age of 58 Years fixed by the company.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >DISPUTES</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">17</th>
+                <td>	
+	Any disputes between yourself and the company shall be subject to the jurisdiction of and be determined by a court of competent jurisdiction in Hyderabad. When you are deputed overseas or assigned to work with any group company or affiliate, in the event of a dispute arising due to a breach of any provision of this Agreement the company shall have the right to seek relief in any court in the geographic location of your assignment and the governing law shall be the applicable law of that jurisdiction. 
+                </td>
+         </tr>
+        <tr>
+                <th scope="row">18</th>
+                <td>	
+             	In the event of a dispute arising due to a violation of the non-compete provision of this Agreement the company shall have the right to seek damages and injunctive relief in any court in the geographic location of the customer(s) and the governing law shall be the applicable law of that jurisdiction.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >BACKGROUND VERIFICATION</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">19</th>
+                <td>	
+    The Company reserves the right to carry out reference verifications or background checks prior to your joining the Company or during the course of your engagement with this Company. Such background checks and reference verifications, amongst others, would include past engagement and salary (this will include your immediate previous engagement), criminal records, countries resided in or worked in, etc. The Company reserves the right to carry out banned/illegal drugs/narcotics substance screening tests on you at any point of time during your engagement. You understand and acknowledge that this is a requirement and you have no objections whatsoever if such checks and verifications are carried out by the Company or a third party agency engaged by the Company. 
+                </td>
+         </tr>
+        <tr>
+                <th scope="row">20</th>
+                <td>	
+	In verification the information furnished by you in your application is misstated or documents submitted by you are not correct or banned/illegal drugs/narcotics substance screening test results are positive, the Company shall, at its sole discretion be entitled to forthwith terminate and/ or revoke your engagement with the Company, without further reference in the matter. Further, termination under this Clause will not confer on you any right to stake claim of any kind of compensation from the Company.
+                </td>
+         </tr>
+         <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >TERMINATION OF EMPLOYMENT</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row">21</th>
+                <td>	
+                           Exit by Separation:-
+                           <ul>
+                                <li>a.	Employee should serve 3 month notice mandatory.</li>
+                                <li>b.	Employees have to pay Gross Salary in lieu of Notice period.</li>
+                                <li> c.	In the event that you decide to leave the company before a period of service agreement you must pay an amount of One lakh rupees (INR) in lieu of the breaking of service agreement. </li>
+                               </ul>   
+                </td>
+         </tr>
+        <tr>
+                <th scope="row">22</th>
+                <td>	
+  	However should you sign any service agreement with company as a part of your employment process or later in the course of your employment in the company, you will then not be entitled to terminate your employment with the company unless you comply with the terms and conditions of the agreement in addition to the above.
+                </td>
+         </tr>
+         <tr>
+                <th scope="row">23</th>
+                <td>	
+  	Any employee leaving the organization before completion of Service agreement from his/ her Date of joining will be liable for recovery of any kind of payments made to him at the time of joining. (Joining Bonus, Notice Period Payment, Relocation Expenses and any other payment made to him at the time of his joining.)
+                </td>
+         </tr>
+         <tr>
+                <th scope="row">24</th>
+                <td>	
+                        The company shall have the right to terminate this agreement forthwith, without any notice and without any salary in lieu of notice period in the event of any of the following:
+                           <ul>
+                                <li>a.	Breach on your part of any terms and conditions of this contract and any other rules made applicable to you in respect of your employment with us.</li>
+                                <li>b.	Violation on your part of the company’s rule with regards to the authenticity and information declared at the time of joining the company.</li>
+                                <li>c.	Any misconduct or failure to carry out any of your duties, confidential data and obligations.</li>
+                        </ul>
+                </td>
+                <tr class="table table-info ">
+                        <th></th>
+                        <th colspan="">
+                                <h6 >GENERAL TERMS AND CONDITIONS</h6>  
+                         </th>   
+                </tr>
+                <tr>
+                        <th scope="row">25</th>
+                        <td>	
+       	You can be transferred to any other location, department, function, establishment, or branch of the Company or subsidiary, associate or affiliate Company in case if the Company requires so for business purposes. In such case you will be governed by the terms and conditions of service applicable to the new assignment
+                        </td>
+                 </tr>
+                 <tr>
+                     <th scope="row">26</th>
+                     <td>
+	    You shall be bound by all the policies, rules, regulations and procedures currently prevailing or that may be established by the Company in future, and any modifications thereof or additions thereto, as may be declared by the Company from time to time.
+                     </td>
+                 </tr>
+                 <tr>
+                        <th scope="row">27</th>
+                        <td>
+      	During your engagement with the Company, you will, at all times, observe secrecy in respect of any technical, trade or business data, customers' names/business details or any other information that might come to your knowledge or possession, which according to the Company are necessarily confidential and form valuable property of the Company. You shall not disclose nor cause the disclosure of any such data in any manner whatsoever. 
+                        </td>
+                </tr>
+                <tr>
+                        <th scope="row">28</th>
+                        <td>
+     	In the event of your leaving the engagement with the Company, you are expected not to take up employment or enter into any type of business/commercial association with any of the Company's clients or their associates, for a period of One year from the date of cessation of this engagement. You have to safeguard Envision Integrated Services Pvt. Ltd  and its customers Intellectual Property Rights and confidential information even after termination of your engagement or business relationship with Envision Integrated Services Pvt. Ltd.
+                        </td>
+                </tr>
+                <tr>
+                        <th scope="row">29</th>
+                        <td>
+     	All software, systems, ideas, concepts, designs, documentation or any other material produced by you during the period of your engagement with Envision Integrated Services Pvt. Ltd will either be Intellectual Property of Envision Integrated Services Pvt. Ltd or that of its Customers. You will not have any rights to such material as described above.
+                        </td>
+                </tr>
+                <tr>
+                        <th scope="row">30</th>
+                        <td>
+        You are required to comply with all the policies of the Company including but not limited to the Code of Ethical Business Conduct, the Anti-Sexual Harassment Policy and such other policies, as communicated to the associates of Envision Integrated Services Pvt. Ltd from time to time. In case of any violation or failure to comply with such Company Policy/policies, the Employee shall be subjected to the disciplinary action as per company policy.
+                        </td>
+                </tr>
+                <tr>
+                        <th scope="row">31</th>
+                        <td>
+        Should any provision of this offer letter be or become ineffective, or be held to be invalid, this shall not affect the validity of the remaining provisions hereof. Any invalid provision or any gap or uncertainty of any provision in the offer letter that becomes apparent when performing the offer letter shall be replaced, interpreted or Supplemented as the case may be in such a manner that the intended purpose of the offer letter will be achieved.
+                        </td>
+                </tr>
+                <tr>
+                        <th scope="row">32</th>
+                        <td>
+        Under Income Tax laws, disclosure of your Permanent Account Number (PAN) to company you are joining is mandatory. In case of non-availability of PAN Income Tax would be deducted as per Income Tax Laws and company will not hold any responsibility towards the same.
+                        </td>
+                </tr>
+                <tr>
+                    <th scope="row">33</th>
+                    <td>
+               	You are to devote your full time, attention and ability to the interest of the company.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">34</th>
+                    <td>
+            By signing a copy of this letter, you are confirming that familiar with Envision Integrated Services Pvt. Ltd's policies. Envision Integrated Services Pvt. Ltd. reserves the right to interpret, change, suspend or terminate any of its benefits, policy plans or programs in accordance with its needs from time to time.
+                    </td>
+                </tr>
+                <tr>
+                        <th scope="row">34</th>
+                        <td>
+                            We take this opportunity to welcome you to the Envision IS family and wish you a satisfying engagement with us.
+                        </td>
+                    </tr>
+                 <tr style="height: 200px;">
+                            <th scope="row">34</th>
+                            <td>
+                                    Sincerely,										
+                                    For Envision Integrated Services Private Limited.
+                                    
+                            </td>
+                </tr>
+                <tr>
+                        <th scope="row"></th>
+                     
+                        <td>
+                                <h5>Authorized Signature</h5>
+                                
+                        </td>
+            </tr>
+            <tr>
+                    <th scope="row"></th>
+                 
+                    <td>
+                            <h5>Encl. : </h5>
+                            <ul>
+                                    <li>•	Annexure A: </li>
+                                    <li>•	Annexure B: </li>
+                                    <li>•	Annexure C: </li>
+                                    <li>•	Annexure D: </li>
+                            </ul>
+                            
+                    </td>
+        </tr>
+        <tr class="table table-info ">
+                <th></th>
+                <th colspan="">
+                        <h6 >ACCEPTANCE OF JOINING</h6>  
+                 </th>   
+        </tr>
+        <tr>
+                <th scope="row"></th>
+                <td>	
+                        The terms and conditions of this Offer Letter are fully acceptable to me. I shall report for duties on      __________________________________.
+                </td>
+         </tr>
+         <tr>
+             <td></td>
+             <td>
+                        <p>  Station:</p>
+                     <p>Date:</p> 
+                     <p style="text-align: right;">	(Candidate Signature)</p>
+                </td>
+              
+         </tr>
+
+
+        </tbody>
+      </table>
+    
+      <table class="table table-bordered"  *ngFor="let emp of employee;let i=index">
+    
+            <thead>
+                    <tr class="table table-info">
+                            <th colspan="3" style="text-align: center;">Annexure - C</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3" style="text-align: center;">EARNINGS</th>
+                  </tr>
+   
+                    <tr>
+                            <td > Name </td>
+                            <td colspan="2">{{emp.firstname}}</td>
+                            
+                      </tr>
+                   <tr>
+                       <td >Employee ID </td>
+                          <td colspan="2">{{i+0001}}</td>
+                      
+                     </tr>
+                 
+                   
+           
+              <tr>
+                <th scope="col">PARTICULARS</th>
+                <th scope="col">ANNUAL</th>
+                <th scope="col">MONTHLY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BASIC</td>
+                <td><input type="text" class="input"></td>
+                <td><input type="text" class="input"></td>
+              </tr>
+              <tr>
+                  <td>HOUSE RENT ALLOWANCE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>CONVEYANCE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>SPECIAL ALLOWANCE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>MEDICAL</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>TELEPHONE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>LEAVE TRAVEL ALLOWANCE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <th scope="col">GROSS SALARY</th>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>EMPLOYEE PF</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+             
+                <tr>
+                  <td>PROFESSIONAL TAX</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <th scope="col">NET TAKE HOME</th>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>EMPLOYEE PF</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <td>GROUP INSURANCE</td>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+                <tr>
+                  <th scope="col">TOTAL COST TO COMPANY</th>
+                  <td><input type="text" class="input"></td>
+                  <td><input type="text" class="input"></td>
+                </tr>
+      
+      
+      <tr >
+               
+      <th colspan="3" >
+      <pre>                 
+      1. You will be governed as per the respective acts of PF and Group Insuance as per the rules in force, from time to time.
+      2. Professional Tax and Income Tax will be deducted on  the monthly basis as per the prevailing rate of your salary.                      
+      3.Performance Bonus is an Annual pay and linked with Performance of each employee. It will be paid after completion of 
+      Fiscal year. If the employee is seperating from the employment services before the fiscal year ended, that the employee
+      is not eligible to receive the Performance Bonus.             
+      </pre>
+      </th>
+      </tr>
+      <tr>
+          <td>
+              <h5>TOTAl CTC: </h5>
+          </td>
+          <td>{{emp.ctc}}</td>
+      </tr>
+      <tr>
+        
+        <td>
+                <p>  Station:</p>
+                <p>Date:</p> 
+                <!-- <p style="text-align: center;">	(Candidate Signature)</p> -->
+           </td>
+           <td></td>
+           <td>
+            <p>(Candidate Signature) </p>
+           </td>
+         
+      </tbody>
+      </table>
+      <table class="table table-bordered">
+    
+        <thead>
+                <tr class="table table-info">
+                        <th colspan="3" style="text-align: center;">Annexure - D</th>
+                </tr>
+                <tr>
+                    <th colspan="3" style="text-align: center;">Checklist of the Documents</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th scope="row">#</th>
+                  <td colspan="3">
+                    At the time of joining, you are requested to bring the following documents in original (For Verification only), along with 3 copies of each.
+                  </td>
+                  </tr>
+                  <tr>
+                        <th scope="row">A</th>
+                        <td>Certificates' supporting your educational qualifications along with marks sheets
+                                   <ul>
+                                        <li>•	Xth Certificate & mark sheets</li>
+                                        <li>•	XIIth Certificate & mark sheets</li>
+                                        <li>•	Degree Certificate & Semester/year-wise mark sheets</li>
+                                        <li>•	Master's Certificate & Semester/year-wise mark sheets</li>
+                                        <li>•	Diploma/PG Diploma Certificate & Transcripts</li>
+                                        <li>•	Any other Certificate with supporting documents – if any</li>
+                                       </ul>   
+                        </td>
+                 </tr>
+                 <tr>
+                        <th scope="row">B</th>
+                        <td>Your relieving letter from your present organization</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">C</th>
+                     <td>Service Certificate from the last employer as well as all previous employers.</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">C</th>
+                     <td>Acceptance copy of Envision Integrated Services Pvt. Ltd's offer of appointment duly signed.</td>
+                 </tr>
+                 <tr>
+                        <th scope="row">D</th>
+                        <td>Three passport-sized color photographs with white background</td>
+                </tr>
+                <tr>
+                        <th scope="row">E</th>
+                        <th>	Valid Passport </th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Please submit copy of the valid Passport (Only First & Last pages). In case you have applied for it, please submit the proof of Passport Office submission ticket. Upon receipt of Passport from Passport Office, please submit the documents to HR.</td>
+                </tr>
+                <tr>
+                        <th scope="row">F</th>
+                        <th>PAN Card and Proof of PAN Number	</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>You MUST carry and provide your PAN Card copy. Please note that it is mandatory to provide the PAN number for processing of your payroll and no payments on account of salaries can be made without a PAN Number. If applied for please submit a copy of the acknowledgement as issued by the Income Tax authorities.</td>
+                </tr>
+                <tr>
+                        <th scope="row">G</th>
+                        <th>Aadhaar Card</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>You MUST carry and provide your Aadhaar Card copy. Please note that it is mandatory to provide your Aadhaar card number for processing KYC in EPFO portal. If applied for, please submit a copy of the acknowledgment as issued by the authorities.</td>
+                </tr>
+               
+                <tr>
+                        <th></th>
+                        <td>Your offer has been made based on the information furnished by you. However, if there is a discrepancy in the copies of the documents/certificates given by you as a proof in support of the above, the Company reserves the right to revoke the offer.</td>
+                </tr>
+                <tr>
+                        <td></td>
+                        <td>
+                                   <p>  Station:</p>
+                                <p>Date:</p> 
+                                <p style="text-align: right;">	(Candidate Signature)</p>
+                           </td>
+                         
+                    </tr>
+            </tbody>
+    </table>
+
+      
+      <div id="content" #content>  
+      
+            <div style="float:right;margin-right:10px; padding-top: 50px;">  
+              <button type="button" value="PDF"  class="btn btn-primary" (click)="captureScreen()">PDF</button>
+            </div>  
+          
+          </div> 
+</div>
+
+
+</mat-sidenav-content>
+</mat-sidenav-container>

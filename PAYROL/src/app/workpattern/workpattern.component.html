@@ -1,0 +1,222 @@
+<table >
+    <thead>
+       
+            <tr style="text-align: center;">
+              <th>
+                CODE
+              </th>
+              <th>
+                WORKING DAYS
+                </th>
+                <th>
+       WEEK OFF DAYS
+              </th>
+              <th>
+          DAYS
+            </th>
+            </tr>
+     
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+                <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field.dob" class="form-control" type="text" name="{{field.dob}}" />
+            </td>
+            <td>
+              <input [(ngModel)]="field.age" class="form-control" type="text" name="{{field.age}}" />
+          </td> 
+            <td>
+                <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)" style="margin-top: 11px;"> 
+                  <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributeDob" [(ngModel)]="newAttribute.dob" name="newAttributeDob" />
+            </td>
+            <td>
+              <input class="form-control" type="text" id="newAttributeAge" [(ngModel)]="newAttribute.age" name="newAttributeAge" />
+          </td>
+       
+       
+
+
+            <td>
+                <button class="btn btn-default" type="button" (click)="addFieldValue()" style="margin-top: 11px;"> 
+                  <i class="fa fa-plus" aria-hidden="true" style="color:green;"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-info" (click)="save()" style="margin-left: 852px;margin-top: 10px;">Save</button>
+
+<!--  
+
+            <div>
+                 
+                <table class="TFtable">  
+  
+                    
+                  <tr >   
+                  <th>CODE</th><th>WORKING DAYS </th>  <th>NO OF WEEK OFFS</th>  <th>WEEKOFF DAYS</th>  
+                 
+                    <th><button mat-raised-button   style="background-color: #3AB1CF; color: white; margin-right:3px;" (click)="addrelationship()">ADD</button>
+                    </th>
+                   
+                  </tr>  
+                  
+                  <tr  *ngFor="let relationship of relationship; let i = index;">  
+                 
+                 
+  
+                  <td><input type="text"  [(ngModel)]="relationship.code"  name="code"></td>  
+                  <td><input type="text"   [(ngModel)]="relationship.wdays"  name="wdays"></td>  
+                  
+                  <td><input type="text" [(ngModel)]="relationship.week"  name="week"></td>
+                  <td><input type="text"  [(ngModel)]="relationship.days" name="days"></td>  
+                 <td>
+                    <!-- &nbsp;<button type="button" class="btn btn-info"  (click)="edit()">Edit</button> &nbsp;
+                    <button type="button" class="btn btn-info"  (click)="save()">Save</button> &nbsp; -->
+                    <!-- <button type="button" class="btn btn-danger"  (click)="remove(i)">Delete</button>
+                 
+                 </td>
+                  </tr>  
+                  
+                  </table> 
+                 
+              </div>
+  
+          
+
+<div class="container">
+  <button type="button" class="btn btn-info" (click)="save()" style="margin-left: 790px;margin-top: 10px;">Save</button>
+</div> --> 
+<!-- <div class="container">
+
+ <!-- <label style="color: rgb(13, 16, 182);">Add Employee</label> 
+
+     <button type="button" class="btn btn-success" (click)="addNewEmployeeBtn()">+</button> 
+     <div class="btn" style="margin-left:862px; margin-top: 10px;">
+     <button type="button" class="btn btn-info" (click)="addNewEmployeeBtn()" >Add Work Pattern
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    </button>
+   </div>
+</div> -->
+<!-- 
+<div class="container">
+
+<div *ngIf="newEmployeeClicked">
+
+<form>
+  <table>
+    <thead class="wpa">
+      <tr style="text-align: center;">
+        <th>
+          CODE
+        </th>
+        <th>
+          WORKING DAYS
+          </th>
+          <th>
+ WEEK OFF DAYS
+        </th>
+        <th>
+    DAYS
+      </th>
+      </tr>
+    </thead>
+    <tbody>
+
+  
+    <tr>
+      <td>
+  <div class="form-group">
+
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" placeholder="Code">
+  </div>
+  </td>
+
+   <td>
+
+   <div class="form-group ">
+
+    <input type="text" class="form-control " id="wdays" name="wdays" [(ngModel)]="model.wdays"  placeholder="Working Days">
+  </div>
+  </td>
+  <td>
+  <div class="form-group">
+        <input type="text" class="form-control" id="week" name="week" [(ngModel)]="model.week" placeholder="Week off days">
+      </div>
+      </td>
+    
+       <td>
+
+       <div class="form-group ">
+ 
+        <input type="text" class="form-control " id="days" name="days" [(ngModel)]="model.days"  placeholder="Days">
+      </div>
+      </td>
+  
+  <td>
+
+ 
+    <button type="button" class="btn btn-info"  (click)="addEmployee()">Save</button> &nbsp;
+    <button type="button" class="btn btn-info"  (click)="cancel()">Cancel</button>
+ 
+  </td>
+  
+  </tr>
+</tbody>
+  </table>
+</form>
+
+</div>
+</div>
+<div class="container">
+<form>
+<table class="table table-bordered" >
+        <thead class="wpa"> 
+          <tr style="text-align: center;">
+            <th scope="col">#</th>
+            <th scope="col">WORKING DAYS</th>
+            <th scope="col">WEEKOFF DAYS</th>
+            <th scope="col">DAYS</th>
+            <th scope="col">ACTIONS</th>
+            <th>
+            <button type="button" class="btn btn-info" (click)="addNewEmployeeBtn()" >Add Work Pattern
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </button>
+      </th>
+           
+          </tr>
+        </thead>
+        <tbody *ngFor="let employee of employees; let i = index" [style.background-color]="changeColorOne()">
+          <tr style="text-align: center;">
+            <th scope="row">{{employee.name}}</th>
+            <td>{{employee.wdays}}</td>
+            <td>{{employee.week}}</td>
+            <td>{{employee.days}}</td>
+            <td> <div class="three">
+                    <button type="button" class="btn btn-outline-primary" (click)="editEmployee(i)">  Edit</button> &nbsp;
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(i)">Delete</button>
+                  </div></td>
+          </tr>
+         
+        </tbody>
+      </table>
+      </form>
+</div> -->

@@ -1,0 +1,103 @@
+
+<mat-sidenav-container fullscreen>
+        <mat-sidenav mode="side" #sidenav opened position="start">
+            <img   src="assets/img/download.png">
+            <ul>
+         <li><a routerLink="/home-tabs" >HOME</a></li>
+         <li><a href="" >HR</a></li>
+         <li><a routerLink="/joining-tabs" >JOINING</a></li>
+         <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+         <li><a href="" >DEPARTMENT</a></li>
+         <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+         <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+         <li><a routerLink="/payslip" >PAYROLL</a></li>
+         <li><a href="" >APPRISAL</a></li>
+         <li><a href="" >SEPARATION</a></li>
+         <li><a href="" >RELIVING</a></li>
+         <li><a href="" >TICKET</a></li>
+         
+        </ul>
+      
+    
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <mat-toolbar style="background-color: #08849C;">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon style="color: white;">menu</mat-icon>
+            </button>
+            <h6 style="color: white;">
+              
+              ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+     
+            <span class="toolbar-spacer"></span>
+            <button style="padding-right:3px; margin:20px;" mat-raised-button style="background-color: white;"
+      matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+    Notifications
+    </button>
+    <button  routerLink="/login"  mat-raised-button style="background-color: white; margin-left: 30px;">
+      LOGIN
+      </button>
+         
+            
+          </mat-toolbar>
+          <div class="main-content">
+              
+
+<div class="container-fluid">
+        <h4> Add Salary Component Group </h4>
+    <p>
+    <mat-form-field appearance="outline">
+     <mat-label>Name</mat-label>
+     <input matInput placeholder="Name" id="name" [(ngModel)]="salarys.name" name="name">
+    </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field appearance="outline">
+     <mat-label>Code</mat-label>
+     <input matInput placeholder="Code" id="code" [(ngModel)]="salarys.code" name="code">
+    </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field appearance="outline">
+     <mat-label>Description</mat-label>
+     <input matInput placeholder="Description" id="description"  [(ngModel)]="salarys.description" name="description">
+    </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary" (click)="saveSalary()">Submit</button> &nbsp;  &nbsp;
+    <button mat-stroked-button  routerLink="/salary" (click)="cancelSalary()">Cancel</button>
+    </div>
+    
+            
+          </div>
+        
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+
+
+
+
+
+
+<div class="container-fluid">
+    <h4> Add/Edit Salary Component Group </h4>
+<p>
+<mat-form-field appearance="outline">
+ <mat-label>Name</mat-label>
+ <input matInput placeholder="Name" id="name" [(ngModel)]="salarys.name" name="name">
+</mat-form-field>
+</p>
+<p>
+<mat-form-field appearance="outline">
+ <mat-label>Code</mat-label>
+ <input matInput placeholder="Code" id="code" [(ngModel)]="salarys.code" name="code">
+</mat-form-field>
+</p>
+<p>
+<mat-form-field appearance="outline">
+ <mat-label>Description</mat-label>
+ <input matInput placeholder="Description" id="description"  [(ngModel)]="salarys.description" name="description">
+</mat-form-field>
+</p>
+<button mat-raised-button color="primary" (click)="saveSalary()">Submit</button> &nbsp;  &nbsp;
+<button mat-stroked-button>Cancel</button>
+</div>

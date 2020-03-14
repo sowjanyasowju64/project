@@ -1,0 +1,97 @@
+<mat-sidenav-container fullscreen>
+  
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <img src="assets\img\download.png" >
+        <ul>
+          
+     <li><a routerLink="/home-tabs" >HOME</a></li>
+     <li><a routerLink="/hr-details">HR</a></li>
+     <li><a routerLink="/joining-tabs" >JOINING</a></li>
+     <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+     <li><a href="" >DEPARTMENT</a></li>
+     <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+     <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+     <li><a routerLink="/payslip" >PAYROLL</a></li>
+     <li><a href="" >APPRISAL</a></li>
+     <li><a href="" >SEPARATION</a></li>
+     <li><a href="" >RELIVING</a></li>
+     <li><a href="" >TICKET</a></li>
+     
+    </ul>
+  
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar style="background-color: #08849C;" >
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon style="color: white;">menu</mat-icon>
+        </button>
+        <h6 style="color: white;">
+         
+          ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+ 
+
+        <span class="toolbar-spacer"></span>
+        <button mat-raised-button style="background-color:white;"
+  matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+NOTIFICATIONS
+</button>
+<button  routerLink="/login "  mat-raised-button style=margin-left:10px; >
+LOGIN
+</button>
+       
+      </mat-toolbar>
+      <div class="main-content">  
+        
+        <mat-tab-group mat-align-tabs="start" #matgroup >
+            <mat-tab label="GENERAL">
+                <app-general></app-general>
+            </mat-tab>
+            <mat-tab label="PERSONAL">
+
+                <app-personal-details ></app-personal-details>
+
+            </mat-tab>
+            <mat-tab label="FAMILY">
+              <app-family></app-family>
+
+      
+            </mat-tab>
+            <mat-tab label="EDUCATION">
+                <app-education></app-education>
+             
+                    
+            </mat-tab>
+            <mat-tab label="P-EMPLOYEEMENT">
+              
+              <app-previous-employeement></app-previous-employeement>
+            </mat-tab>
+            <mat-tab label="BANK">
+
+          <app-bank></app-bank>
+
+            </mat-tab>
+            <mat-tab label="IT-DECLARATION">
+              <app-it-declaration></app-it-declaration>
+            </mat-tab>
+            <mat-tab label="M-DECLARATION">
+              <app-medical-declaration></app-medical-declaration>
+            </mat-tab>
+            <mat-tab label="A-ACCEPTANCE">
+              <app-acceptance></app-acceptance>
+            </mat-tab>
+            <mat-tab label="OTHER">Content 3</mat-tab>
+          </mat-tab-group>
+    <table class="table table-bordered">
+      <th>
+      <button  class="btn btn-outline-info" (click)="selectNext1(matgroup)" >PREVIOUS</button>
+   
+  
+    <button  class="btn btn-outline-info" (click)="selectNext(matgroup)" style=" float:right;">NEXT</button>
+    </th>
+        </table>
+      </div>
+    
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

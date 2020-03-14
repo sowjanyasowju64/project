@@ -1,0 +1,638 @@
+<!----
+<div class="container">
+    
+            
+           <form [formGroup]="EmployeeForm" (ngSubmit)="onSubmit()"> 
+      
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                 <label>Employee Name</label><span>*</span>
+                            </div>
+                            <div class="col-sm-4">
+                               
+                                
+                           <input type="text" formControlName="firstname" [(ngModel)]="employee.firstname" name="firstname" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.firstname.errors }" />
+                                <div *ngIf="submitted && f.firstname.errors" class="invalauthor-feedback">
+                                    <div *ngIf="f.firstname.errors.required" style="color:red">Employee Name is required</div>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label>Date of Birth</label><span>*</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" [(ngModel)]="employee.date" name="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                                        <div *ngIf="f.date.errors.required">Date is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>  ---
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Status</label><span>*</span>
+                            </div>
+                            <div class="col-sm-4">
+                                <select type="text" [(ngModel)]="employee.status" name="status" formControlName="status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.status.errors }" >
+                                    <option value="Active">Active</option>
+                                    <option value="InActive">InActive</option>
+                               </select>
+
+                               <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                                    <div *ngIf="f.status.errors.required">Status is required</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+                <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                 <label>Official Mail</label><span>*</span>
+                            </div>
+                        <div class="col-sm-4">
+                           <input type="text" formControlName="fmail" [(ngModel)]="employee.fmail" name="fmail" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.fmail.errors }" />
+                                <div *ngIf="submitted && f.fmail.errors" class="invalauthor-feedback">
+                                    <div *ngIf="f.fmail.errors.required" style="color:red">Official mail is required</div>
+                                    
+                                </div> 
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                     <label>Personal Mail</label><span>*</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" formControlName="pmail" [(ngModel)]="employee.pmail" name="Pmail" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.pmail.errors }" />
+                                    <div *ngIf="submitted && f.pmail.errors" class="invalauthor-feedback">
+                                        <div *ngIf="f.pmail.errors.required" style="color:red">Personal mail is required</div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                         <label>Phone Number</label><span>*</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                   <input type="text" formControlName="phonenumber" [(ngModel)]="employee.phonenumber" name="phonenumber" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.phonenumber.errors }" />
+                                        <div *ngIf="submitted && f.phonenumber.errors" class="invalauthor-feedback">
+                                            <div *ngIf="f.phonenumber.errors.required" style="color:red">Phonenumber is required</div>
+                                            
+                                        </div> 
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>Date of Joining</label><span>*</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" [(ngModel)]="employee.date" name="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                                        <div *ngIf="f.date.errors.required">Date is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div> 
+                        <div class="form-group">
+                                <div class="row">
+                                            <div class="col-sm-3">
+                                                <label>Work Type</label><span>*</span></div>
+                                <div class="col-sm-4">
+                                    <select class="form-control" [(ngModel)]="employee.wtype" name="wtype" formControlName="wtype" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.wtype.errors }" >
+                                      <option value="permanent">Permanent </option>
+                                      <option value="Contract">Contract</option>
+                                      <option value="3rd-Party">3rd-Party</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.wtype.errors" class="invalid-feedback">
+                                            <div *ngIf="f.wtype.errors.required">Work Type is required</div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                    <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label>Work Pattern</label><span>*</span></div>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" [(ngModel)]="employee.wp" name="wp" formControlName="wp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.wp.errors }" >
+                                          <option value="WA">WA</option>
+                                          <option value="WB">WB</option>
+                                          <option value="WC">WC</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.wp.errors" class="invalid-feedback">
+                                                <div *ngIf="f.wp.errors.required">Work Pattern is required</div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                    
+                    <div class="form-group">
+                            <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>Level</label><span>*</span></div>
+                            <div class="col-sm-4">
+                                <select class="form-control" [(ngModel)]="employee.level" name="level" formControlName="level" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.level.errors }" >
+                                  <option value="Level-1">Level-1</option>
+                                  <option value="Level-2">Level-2</option>
+                                  <option value="Level-3">Level-3</option>
+                                  <option value="Level-4">Level-4</option>
+                                  <option value="Level-5">Level-5</option>
+                                  <option value="Level-6">Level-6</option>
+                                  <option value="Level-7">Level-7</option>
+                                </select>
+                                <div *ngIf="submitted && f.level.errors" class="invalid-feedback">
+                                        <div *ngIf="f.level.errors.required">Level is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                                <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>Payslip Component Type</label><span>*</span></div>
+                                        <div class="col-sm-4">
+        
+                                <select class="form-control"   [(ngModel)]="employee.pay" name="pay" formControlName="pay" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pay.errors }" >
+                   
+                                  <option value="A">A</option>
+                                  <option value="B">B</option>
+                                  <option value="C">C</option>
+                                </select>
+                                <div *ngIf="submitted && f.pay.errors" class="invalid-feedback">
+                                        <div *ngIf="f.pay.errors.required">Payslip Component Type is required</div>
+                                </div>
+                              </div>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>Designation</label><span>*</span></div>
+                                        <div class="col-sm-4">
+        
+                                <select class="form-control"  [(ngModel)]="employee.designation" name="designation" formControlName="designation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }" >
+                                  
+                                  <option value="Jr. Executive">Jr. Executive</option>
+                                  <option value="Assistant Executive">Assistant Executive</option>
+                                  <option value="Senior Executive">Senior Executive</option>
+                                  <option value="Team Lead">Team Lead</option>
+                                  <option value="Project Manager">Project Manager</option>
+                                  <option value="General Manager">General Manager</option>
+                                  <option value="Techincal Diretor">Techincal Diretor</option>
+                                </select>
+                                <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+                                        <div *ngIf="f.designation.errors.required">Payslip Component Type is required</div>
+                                </div>
+                              </div>
+                              </div>
+                        </div>
+                   <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                         <label>CTC</label><span>*</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                     
+                                   <input type="text" formControlName="ctc" [(ngModel)]="employee.ctc" name="ctc" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.ctc.errors }" />
+                                        <div *ngIf="submitted && f.ctc.errors" class="invalauthor-feedback">
+                                            <div *ngIf="f.ctc.errors.required" style="color:red">CTC is required</div>
+                                            
+                                        </div> 
+                                    </div>
+                                </div>
+                        </div>
+                        
+                      <div class="form-group">
+                                <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>Agreement</label><span>*</span></div>
+                           <div class="col-sm-4">
+                                <select class="form-control"  [(ngModel)]="employee.agreement" name="agreement" formControlName="agreement" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.agreement.errors }" >
+                             
+                                  <option value="1">One Year</option>
+                                  <option value="2">Two Years</option>
+                                  
+                                </select>
+                                <div *ngIf="submitted && f.agreement.errors" class="invalid-feedback">
+                                    <div *ngIf="f.agreement.errors.required">Agreement is required</div>
+                                </div>
+                            </div> 
+                              </div>
+                        </div>
+               <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-3">
+                                <label>Notice Period</label><span>*</span></div>
+                        <div class="col-sm-4">
+                            <select class="form-control"  [(ngModel)]="employee.nperiod" name="nperiod" formControlName="nperiod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nperiod.errors }" >
+                 
+                            <option value="1">1 Month</option>
+                            <option value="2">2 Months</option>
+                            <option value="3">3 Months</option>
+                            <option value="4">4 Months</option>
+                            </select>
+                            <div *ngIf="submitted && f.nperiod.errors" class="invalid-feedback">
+                                    <div *ngIf="f.nperiod.errors.required">Notice Period is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                 <label>Job Location</label><span>*</span>
+                            </div>
+                        <div class="col-sm-4">
+                           <input type="text" formControlName="job" [(ngModel)]="employee.job" name="job" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.job.errors }" />
+                                <div *ngIf="submitted && f.job.errors" class="invalauthor-feedback">
+                                <div *ngIf="f.job.errors.required" style="color:red">Job Location is required</div>
+                                    
+                                </div> 
+                        </div>
+                        </div>
+                 </div>
+                     <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>Date of Relieving</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" [(ngModel)]="employee.relieving" name="relieving" formControlName="relieving" class="form-control" />
+                          
+                                </div>
+                            </div>
+                    </div>  
+                    <div class="form-group">    
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label></label></div>
+                                <div class="col-sm-2">
+                                <button class="btn btn-info" >Save</button>
+                                </div>
+                            </div>
+                           
+                    </div>
+                </form>
+        </div>
+--->
+
+<div class="container">
+    <form [formGroup]="EmployeeForm" (ngSubmit)="onSubmit()"> 
+        <table class="table table-bordered" >
+    
+                <thead>
+                        <!-- <tr>
+                                <th colspan="3" style="text-align: center;">EARNINGS - A</th>
+                              </tr> -->
+         <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Enter Details</th>
+            
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>   
+                        <div class="col-sm-4">
+                            <label>Employee Name</label><span>*</span>
+                        </div>
+                    </td>
+                    <td>
+                            <div class="col-sm-6">
+                                    <input type="text" formControlName="firstname" [(ngModel)]="employee.firstname" name="firstname" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.firstname.errors }" />
+                                         <div *ngIf="submitted && f.firstname.errors" class="invalauthor-feedback">
+                                             <div *ngIf="f.firstname.errors.required" style="color:red">Employee Name is required</div>
+                                             
+                                         </div> 
+                            </div>
+                    </td>
+              
+                  </tr>
+                  <tr>
+                      <td>    
+                          <div class="col-sm-3">
+                            <label>Status</label><span>*</span>
+                        </div>
+                    </td>
+                    <td>
+                            <div class="col-sm-6">
+                                    <select type="text" [(ngModel)]="employee.status" name="status" formControlName="status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.status.errors }" >
+                                        <option value="Active">Active</option>
+                                        <option value="InActive">InActive</option>
+                                   </select>
+    
+                                   <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                                        <div *ngIf="f.status.errors.required">Status is required</div>
+                                        
+                                    </div>
+                            </div>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-3">
+                                    <label>Official Mail</label><span>*</span>
+                            </div>
+                      </td>
+                      <td>      
+                        <div class="col-sm-6">
+                            <input type="text" formControlName="fmail" [(ngModel)]="employee.fmail" name="fmail" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.fmail.errors }" />
+                                 <div *ngIf="submitted && f.fmail.errors" class="invalauthor-feedback">
+                                     <div *ngIf="f.fmail.errors.required" style="color:red">Official mail is required</div>
+                                     
+                                 </div> 
+                         </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-4">
+                                    <label>Personal Mail</label><span>*</span>
+                            </div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <input type="text" formControlName="pmail" [(ngModel)]="employee.pmail" name="Pmail" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.pmail.errors }" />
+                                    <div *ngIf="submitted && f.pmail.errors" class="invalauthor-feedback">
+                                        <div *ngIf="f.pmail.errors.required" style="color:red">Personal mail is required</div>
+                                        
+                                    </div> 
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-4">
+                                    <label>Phone Number</label><span>*</span>
+                            </div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <input type="text" formControlName="phonenumber" [(ngModel)]="employee.phonenumber" name="phonenumber" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.phonenumber.errors }" />
+                                        <div *ngIf="submitted && f.phonenumber.errors" class="invalauthor-feedback">
+                                             <div *ngIf="f.phonenumber.errors.required" style="color:red">Phonenumber is required</div>
+                                             
+                                        </div> 
+                             </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="col-sm-4">
+                                    <label>Date of Joining</label><span>*</span>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-sm-6">
+                                    <input type="date" [(ngModel)]="employee.date" name="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                                        <div *ngIf="f.date.errors.required">Date is required</div>
+                                    </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-3">
+                                    <label>Work Type</label><span>*</span></div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <select class="form-control" [(ngModel)]="employee.wtype" name="wtype" formControlName="wtype" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.wtype.errors }" >
+                                      <option value="permanent">Permanent </option>
+                                      <option value="Contract">Contract</option>
+                                      <option value="3rd-Party">3rd-Party</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.wtype.errors" class="invalid-feedback">
+                                            <div *ngIf="f.wtype.errors.required">Work Type is required</div>
+                                    </div>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                   <td>
+                        <div class="col-sm-3">
+                                <label>Work Pattern</label><span>*</span></div>
+                   </td>
+                   <td>
+                        <div class="col-sm-6">
+                                <select class="form-control" [(ngModel)]="employee.wp" name="wp" formControlName="wp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.wp.errors }" >
+                                  <option value="6 Working Days">WA</option>
+                                  <option value="5 Working Days">WB</option>
+                                  <option value="7 Working Days">WC</option>
+                                </select>
+                                <div *ngIf="submitted && f.wp.errors" class="invalid-feedback">
+                                        <div *ngIf="f.wp.errors.required">Work Pattern is required</div>
+                                </div>
+                        </div>
+                   </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-3">
+                                    <label>Level</label><span>*</span></div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <select class="form-control" [(ngModel)]="employee.level" name="level" formControlName="level" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.level.errors }" >
+                                      <option value="Level-1">Level-1</option>
+                                      <option value="Level-2">Level-2</option>
+                                      <option value="Level-3">Level-3</option>
+                                      <option value="Level-4">Level-4</option>
+                                      <option value="Level-5">Level-5</option>
+                                      <option value="Level-6">Level-6</option>
+                                      <option value="Level-7">Level-7</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.level.errors" class="invalid-feedback">
+                                            <div *ngIf="f.level.errors.required">Level is required</div>
+                                    </div>
+                            </div>
+                      </td>
+                    </tr>
+                 
+                    <tr>
+                      <td>
+                            <div class="col-sm-6">
+                                    <label>Payslip Component Type</label><span>*</span></div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+        
+                                    <select class="form-control"   [(ngModel)]="employee.pay" name="pay" formControlName="pay" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pay.errors }" >
+                                
+                                      <option value="A">A</option>
+                                      <option value="B">B</option>
+                                      <option value="C">C</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.pay.errors" class="invalid-feedback">
+                                            <div *ngIf="f.pay.errors.required">Payslip Component Type is required</div>
+                                    </div>
+                                  </div>
+                      </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <div class="col-sm-3">
+                             <label>Designation</label><span>*</span></div>
+                    </td>
+                    <td>
+                            <div class="col-sm-6">
+        
+                                    <select class="form-control"  [(ngModel)]="employee.designation" name="designation" formControlName="designation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }" >
+
+                                      <option value="Jr. Executive">Jr. Executive</option>
+                                      <option value="Assistant Executive">Assistant Executive</option>
+                                      <option value="Senior Executive">Senior Executive</option>
+                                      <option value="Team Lead">Team Lead</option>
+                                      <option value="Project Manager">Project Manager</option>
+                                      <option value="General Manager">General Manager</option>
+                                      <option value="Techincal Diretor">Techincal Diretor</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+                                            <div *ngIf="f.designation.errors.required">Designation is required</div>
+                                    </div>
+                            </div>
+                    </td>
+                    </tr>
+                    <tr>
+                            <td>   
+                                <div class="col-sm-4">
+                                    <label>Department</label><span>*</span>
+                                </div>
+                            </td>
+                            <td>
+                                    <div class="col-sm-6">
+                                            <input type="text" formControlName="department" [(ngModel)]="employee.department" name="department" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.department.errors }" />
+                                                 <div *ngIf="submitted && f.department.errors" class="invalauthor-feedback">
+                                                     <div *ngIf="f.department.errors.required" style="color:red">Department is required</div>
+                                                     
+                                                 </div> 
+                                    </div>
+                            </td>
+                      
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-3">
+                                    <label>CTC</label><span>*</span>
+                            </div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <input type="text" formControlName="ctc" [(ngModel)]="employee.ctc" name="ctc" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.ctc.errors }" />
+                                         <div *ngIf="submitted && f.ctc.errors" class="invalauthor-feedback">
+                                             <div *ngIf="f.ctc.errors.required" style="color:red">CTC is required</div>
+                                             
+                                         </div> 
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                            <div class="col-sm-3">
+                                    <label>Agreement</label><span>*</span></div>
+                      </td>
+                      <td>
+                            <div class="col-sm-6">
+                                    <select class="form-control"  [(ngModel)]="employee.agreement" name="agreement" formControlName="agreement" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.agreement.errors }" >
+                                      <option value="1">One Year</option>
+                                      <option value="2">Two Years</option>
+                                      
+                                    </select>
+                                    <div *ngIf="submitted && f.agreement.errors" class="invalid-feedback">
+                                        <div *ngIf="f.agreement.errors.required">Agreement is required</div>
+                                    </div>
+                                </div> 
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <div class="col-sm-3">
+                                        <label>Notice Period</label><span>*</span></div>
+                        </td>
+                        <td>
+                                <div class="col-sm-6">
+                                        <select class="form-control"  [(ngModel)]="employee.nperiod" name="nperiod" formControlName="nperiod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nperiod.errors }" >
+                                        <option value="1">1 Month</option>
+                                        <option value="2">2 Months</option>
+                                        <option value="3">3 Months</option>
+                                        <option value="4">4 Months</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.nperiod.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nperiod.errors.required">Notice Period is required</div>
+                                        </div>
+                                </div>
+                        </td>
+                  
+                    </tr>
+                    <tr>
+                        <td>
+                                <div class="col-sm-3">
+                                        <label>Job Location</label><span>*</span>
+                                </div>
+                        </td>
+                        <td>
+                                <div class="col-sm-6">
+                                        <input type="text" formControlName="job" [(ngModel)]="employee.job" name="job" class="form-control" [ngClass]="{ 'is-invalauthor': submitted && f.job.errors }" />
+                                             <div *ngIf="submitted && f.job.errors" class="invalauthor-feedback">
+                                             <div *ngIf="f.job.errors.required" style="color:red">Job Location is required</div>
+                                                 
+                                             </div> 
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <div class="col-sm-4">
+                                            <label>Date of Relieving</label>
+                                    </div>
+                            </td>
+                 <td>
+                     
+                        <div class="col-sm-6">
+                                <input type="text" [(ngModel)]="employee.relieving" name="relieving" formControlName="relieving" class="form-control"  />
+                      
+                         </div> 
+                 </td>
+                    </tr>
+          <tr>
+              <td>
+
+              </td>
+              <td>
+                    <div class="form-group">    
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label></label></div>
+                                <div class="col-sm-2">
+                                <button class="btn btn-info" >Save</button>
+                                </div>
+                            </div>
+                           
+                    </div>
+              </td>
+          </tr>
+          
+     
+        </tbody>
+    </table>  
+</form>    
+</div>
+
+        
+

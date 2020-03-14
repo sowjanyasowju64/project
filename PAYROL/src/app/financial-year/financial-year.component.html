@@ -1,0 +1,50 @@
+<div>  
+        Select Financial Year:  
+        <select  [(ngModel)]="YearHeader.name" (ngModelChange)="SearchYear(YearHeader.name)">  
+             <option *ngFor="let prod of YearHeader">{{prod.name}} </option>  
+         </select>  
+      
+      
+      
+      <div *ngIf="YearHeader.name">  
+      <h5>You have selected: {{YearHeader.name}} Year </h5>  
+      </div>  
+      </div>  
+      <div>  
+      <h4>Year Details:</h4>  
+      <table class="table table-bordered">  
+      <tr >   
+      <th>S.NO</th> <th>Month</th>  
+      
+      <th> NO of days</th><th>APL</th><th>ACL</th><th>NLM</th><th>EPL</th><th>PLCF</th>
+      <th>APL</th><th>ECL</th><th>CLF</th> <th>Total CO</th><th>NPD</th><th>LP</th><th>NPD</th><th>Remarks</th>
+      
+      </tr>  
+      <tr  *ngFor="let Prod of YearDetails; let i=index ">  
+        <td>{{i+1}}</td>
+       
+      <td>{{Prod.month}}</td>  
+      <td></td> 
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      <td></td>  
+      
+      </tr>  
+      
+      </table>  
+      </div>  
+      
+      
+      
+      
+      

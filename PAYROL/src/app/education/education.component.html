@@ -1,0 +1,128 @@
+
+             
+
+
+  
+
+<!-- <button mat-raised-button   color="warn" (click)="removeeducation(i)">REMOVE</button>
+ 
+ <button mat-raised-button  [color]="'success'" (click)="addeducation()">ADD</button>
+
+
+   <table class="example" cellspacing="5">
+        <tr>
+            
+           <td>Name of the organization</td>
+            <td>Designation</td>
+            <td>From-To</td>
+            <td>D.O.B</td>
+            <td>Number of years</td>
+            <td>F/P/C</td>
+            <td>Contract details of employee</td>
+            <td>Reason for leaving the job</td>
+          
+           
+               
+        </tr>
+
+      </table>
+
+      <div class="example-container">
+        
+    <div class="" *ngFor="let education of education; let i = index;">
+
+
+            <table class="example-full-width" cellspacing="5"><tr>
+             
+    <td><mat-form-field>
+      <input matInput  [(ngModel)]="education.name"  name="name" placeholder="Enter school or college name" >
+    </mat-form-field></td>
+ 
+        <td><mat-form-field>
+          <input matInput  [(ngModel)]="education.university"  name="university" placeholder="Enter university name" >
+        </mat-form-field></td>
+        
+   <td><mat-form-field>
+                <input matInput   [(ngModel)]="education.stream" name="stream" placeholder="Enter stream" >
+              </mat-form-field></td>
+
+
+ 
+
+ 
+   <td><mat-form-field>
+      <input matInput   [(ngModel)]="education.year" name="year"  placeholder="Enter year of passed out">
+    </mat-form-field></td>
+ 
+       
+    
+           <td> <mat-form-field>
+              <input matInput   [(ngModel)]="education.graduate" name="graduate" placeholder="Enetr graduate" >
+            </mat-form-field></td>
+            <td> <mat-form-field>
+                        <input matInput   [(ngModel)]="education.reason" name="reason"  placeholder="Enter if any gaps with reason">
+                      </mat-form-field></td>
+
+                      <td><mat-form-field>
+                            <input matInput  [(ngModel)]="education.fpc" name="fpc" placeholder="F/P/C">
+                          </mat-form-field></td>
+                  
+                          
+
+                             
+
+                                      <td> <input #file type="file" [hidden]="true" accept="image/*" (change)="upload(file.files)">
+                                        <button mat-raised-button color="accent" #upload (click)="file.click()">Upload file</button> </td>
+            </tr>
+            </table>
+            </div>
+            </div>-->
+
+
+
+           
+           
+            <div>
+                 
+              <table class="TFtable">  
+
+                  
+                <tr >   
+                <th> School/College Name</th><th>University Name</th>  <th>Stream</th>  <th>Year of passed out</th> <th>Graduate</th> <th>If any gaps with reason</th> 
+                
+              <th></th>
+ 
+                   <th> <button mat-raised-button style="background-color: #3AB1CF; color: white;" (click)="addeducation()">ADD</button></th>
+                   <th><button mat-raised-button   color="warn" (click)="removeeducation(i)">REMOVE</button></th>
+                   
+                </tr>  
+                
+                <tr  *ngFor="let education of education; let i = index;">  
+               
+               
+
+                <td><input type="text"   [(ngModel)]="education.name"   name="name"></td>  
+                <td><input type="text"   [(ngModel)]="education.university"  name="university"></td>  
+                
+                <td><input type="text" [(ngModel)]="education.stream" name="stream"></td>
+                <td><input type="text" [(ngModel)]="education.year" name="year" ></td>  
+
+
+                <td><input type="text"  [(ngModel)]="education.graduate" name="graduate" ></td>
+                <td><input type="text"  [(ngModel)]="education.fpc" name="fpc" ></td>
+                <td> <input #file type="file" [hidden]="true" accept="image/*" (change)="upload(file.files)">
+                  <button mat-raised-button color="primary" #upload (click)="file.click()">Upload file</button> </td>
+              
+              
+                
+                
+                </tr>  
+                
+                </table> 
+               
+            </div>
+           
+           
+                       
+           
+           

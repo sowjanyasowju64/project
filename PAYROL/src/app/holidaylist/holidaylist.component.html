@@ -1,0 +1,38 @@
+<div >
+   Holidays List:  
+    <select  [(ngModel)]="YearHeader.year" (ngModelChange)="SearchYear(YearHeader.year)">  
+         <option *ngFor="let prod of YearHeader">{{prod.year}} </option>  
+     </select>  
+ 
+  </div>  
+  <div>   
+  <table class="table table-bordered table-hover " style="width: max-content;">
+    <thead>
+        <tr class="table-warning">
+            <th  *ngIf="YearHeader.year" colspan="4" class="clss" style="text-align: center;">HOLIDAYS - ( {{ YearHeader.year}} )</th>
+        </tr>
+        <tr  class="table-primary">
+            <th  *ngIf="YearHeader.year" scope="col">S No</th>
+            <th  *ngIf="YearHeader.year" scope="col">Date</th>
+            <th  *ngIf="YearHeader.year" scope="col">Day</th>
+            <th   *ngIf="YearHeader.year" scope="col">Holiday</th>
+          </tr>
+    </thead>
+  <tr  class="table-info" *ngFor="let Prod of YearDetails; let i=index ">  
+    <td>{{i+1}}</td>
+   
+  <td>{{Prod.date}}</td>  
+  <td>{{Prod.day}}</td> 
+  <td>{{Prod.holiday}}</td> 
+ 
+ 
+  
+  </tr>  
+  
+  </table>  
+  </div>  
+  
+  
+  
+  
+  

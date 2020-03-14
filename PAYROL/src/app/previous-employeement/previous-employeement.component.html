@@ -1,0 +1,75 @@
+
+
+
+            <div>
+                 
+              <table class="TFtable">  
+
+                  
+                <tr >   
+                <th>Name of the organization</th><th>Designation</th>  <th>From-To</th>  <th>D.O.B</th> <th>Number of Years</th> <th>F/P/C</th> 
+                <th>Contact details of employeer</th><th>Reason for leaving the job</th>
+                <th>Offer Letter</th>
+                <th>Pay Slip</th>
+                <th>Reliving Letter</th>
+              
+
+              <th><button  mat-raised-button style="background-color: #3AB1CF; color: white;" (click)="addemployeement()">ADD</button></th>
+              <th><button mat-raised-button   color="warn" (click)="removeemployeement(i)">REMOVE</button></th>
+             
+                   
+                </tr>  
+                
+                <tr  *ngFor="let employeement of employeement; let i = index;">  
+               
+               
+
+                <td><input type="text"    [(ngModel)]="employeement.name"  name="name"></td>  
+                <td><input type="text"   [(ngModel)]="employeement.designation"  name="designation"></td>  
+                
+                <td><input type="text"[(ngModel)]="employeement.fromto" name="fromto" ></td>
+                <td><input type="text"  [(ngModel)]="employeement.dob"  name="dob"></td>  
+
+
+                <td><input type="text"  [(ngModel)]="employeement.years" name="years"></td>
+                <td><input type="text"   [(ngModel)]="employeement.fpc" name="fpc"></td>
+                <td><input type="text"  [(ngModel)]="employeement.contract" name="contract"></td>
+                <td><input type="text"  [(ngModel)]="employeement.leaving"></td>
+
+
+
+
+
+                <td> 
+                  <input #file type="file" [hidden]="true" accept="image/*" (change)="upload(file.files)">
+                  <button mat-raised-button color="primary" #upload (click)="file.click()">Upload File</button> 
+
+              </td>
+
+                      <td> 
+                          <input #file type="file" [hidden]="true" accept="image/*" (change)="upload(file.files)">
+                          <button mat-raised-button color="primary" #upload (click)="file.click()">Upload File</button> 
+                      </td>
+
+                              <td> <input #file type="file" [hidden]="true" accept="image/*" (change)="upload(file.files)">
+                                <button mat-raised-button color="primary" #upload (click)="file.click()">Upload File</button> </td>
+              
+              
+                
+                
+                </tr>  
+                
+                </table> 
+                
+               
+            </div>
+
+          
+           
+           
+                      
+           
+           
+                       
+           
+           

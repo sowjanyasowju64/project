@@ -1,0 +1,101 @@
+
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <img   src="assets/img/download.png">
+        <ul>
+     <li><a routerLink="/home-tabs" >HOME</a></li>
+     <li><a routerLink="/hr-details" >HR</a></li>
+     <li><a routerLink="/joining-tabs" >JOINING</a></li>
+     <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+     <li><a href="" >DEPARTMENT</a></li>
+     <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+     <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+     <li><a routerLink="/payslip" >PAYROLL</a></li>
+     <li><a routerLink="/apprisal" >APPRISAL</a></li>
+     <li><a href="" >SEPARATION</a></li>
+     <li><a href="" >RELIVING</a></li>
+     <li><a href="" >TICKET</a></li>
+    </ul>
+  
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar style="background-color: #08849C;">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon style="color: white;">menu</mat-icon>
+        </button>
+        <h6 style="color: white;">
+          
+          ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+ 
+        <span class="toolbar-spacer"></span>
+        <button style="background-color: white" mat-raised-button 
+        matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+        Notifications
+        </button>
+            
+        <button  routerLink="/login"  mat-raised-button style="background-color: white; margin-left:10px;">
+        LOGIN
+        </button>
+     
+        
+      </mat-toolbar>
+      <div class="main-content">
+        
+        <mat-tab-group mat-align-tabs="start" #matgroup >
+            <mat-tab label="ADD EMPLOYEE">
+             <app-add-employee></app-add-employee>
+              
+              
+            </mat-tab>
+            <mat-tab label="SHOW EMPLOYEES">
+              <app-show-employee1></app-show-employee1>
+            </mat-tab>
+            
+            <mat-tab label="W-PATTERN">
+              <app-workpattern></app-workpattern>
+                <!-- <table class="table table-bordered" style="width: 80%;">
+                    <thead>
+                      <tr style="text-align: center;">
+                        <th scope="col">#</th>
+                        <th scope="col">Working Days</th>
+                        <th scope="col">week off Days </th>
+                        <th scope="col">Days</th>
+                      </tr>
+                    </thead>
+                    <tbody style="text-align: center;">
+                      <tr>
+                        <th scope="row">WA</th>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>Saturday & Sunday</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">WB</th>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>Sunday</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">WC</th>
+                          <td>7</td>
+                          <td>0</td>
+                          <td>---</td>
+                        </tr>
+                  
+                    </tbody>
+                  </table> -->
+            </mat-tab>
+            <mat-tab label="PAYSLIP COMPONENT ">
+          <app-salary-show></app-salary-show>
+            </mat-tab>
+</mat-tab-group>
+
+
+<button  class="btn btn-outline-info" (click)="selectNext1(matgroup)" style="margin-top:10px">PREVIOUS</button>
+          <button  class="btn btn-outline-info" (click)="selectNext(matgroup)" style="margin-top: 10px; float:right;margin-bottom:10px">NEXT</button> 
+</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+  
+            

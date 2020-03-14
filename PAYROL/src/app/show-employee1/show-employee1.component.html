@@ -1,0 +1,71 @@
+<div class="container">
+    <table class=" table  table-bordered" id="contentToConvert" >
+        
+        <tr style="text-align: center;" class="table table-info "> 
+            <th>EMPLOYEE ID</th>
+            <th>EMPLOYEE NAME</th>
+            <th>STATUS</th>
+            <th>OFFICIAL MAIL</th>
+            <Th>PERSONAL MAIL</Th>
+            <th>PHONE NUMBER</th>
+            <th>DATE OF JOINING</th>
+            <th>WORK TYPE</th>
+            <th>WORK PATTERN</th>
+            <th>LEVEL</th>
+            <th>PAYROLL TYPE</th>
+            <th>DESIGNATION</th>
+            <th>DEPARTMENT</th>
+            <th>CTC</th>
+            <th>AGREEMENT</th>
+            <th>NOTICE PERIOD</th>
+            <th>JOB LOCATION</th>
+            <Th>DATE OF RELIEVING</Th>
+        </tr>
+     
+   
+        <tr *ngFor="let emp of employee;let i=index" style="text-align: center;">
+          <td><a style="color:blue" routerLink="/joining-tabs">{{i+0001}}</a></td> 
+          <td>{{emp.firstname}}</td>
+           <!-- <td><a href="#" style="color:blue">{{emp.id}}</a></td>  -->
+
+           <td style="color: blue">{{emp.status}}</td>
+         <td>
+           {{emp.fmail}}</td>
+         <td>
+           {{emp.pmail}}</td>
+         <td>{{emp.phonenumber}}</td>
+         <td>{{emp.date}}</td>
+          <td>{{emp.wtype}}</td>
+          <td>{{emp.wp}}</td>
+           <td>{{emp.level}}</td>
+         <td>
+             {{emp.pay}}
+           </td>
+          <td>{{emp.designation}}</td> 
+          <td>{{emp.department}}</td>
+            <td>{{emp.ctc}}</td>
+            <td>{{emp.agreement}}
+           </td>
+           <td>
+             {{emp.nperiod}}
+           </td> 
+  
+      
+        
+              <td>{{emp.job}}</td>
+       
+         
+              <td>{{emp.relieving}}</td>
+     
+        </tr>
+         
+    </table>
+</div> 
+<!-- <div id="content" #content>  
+  
+   
+  <div style="float:right;margin-right:10px;">  
+    <button type="button" value="PDF"  class="btn btn-primary" (click)="captureScreen()"> DOWNLOAD PDF</button>
+  </div>  
+
+</div>   -->

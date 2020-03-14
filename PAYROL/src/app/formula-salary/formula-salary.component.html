@@ -1,0 +1,277 @@
+
+
+<mat-sidenav-container fullscreen>
+                <mat-sidenav mode="side" #sidenav opened position="start">   
+                      <img src="assets/img/download.png">
+                 <ul>
+                 <li><a routerLink="/home-tabs" >HOME</a></li>
+                 <li><a routerLink="/hr-details" >HR</a></li>
+                 <li><a routerLink="/joining-tabs" >JOINING</a></li>
+                 <li><a routerLink="/appointment" >APPOINTMENT</a></li>
+                 <li><a href="" >DEPARTMENT</a></li>
+                 <li><a routerLink="/salary" > PAYSLIP COMPONENT </a></li>
+                 <li><a routerLink="/attendence" >ATTENDENCE</a></li>
+                 <li><a routerLink="/payslip" >PAYROLL</a></li>
+                 <li><a href="" >APPRISAL</a></li>
+                 <li><a href="" >SEPARATION</a></li>
+                 <li><a href="" >RELIVING</a></li>
+                 <li><a href="" >TICKET</a></li>
+                 
+                </ul>
+              
+            
+                </mat-sidenav>
+                <mat-sidenav-content>
+                  <mat-toolbar style="background-color: #08849C;">
+                    <button mat-icon-button (click)="sidenav.toggle()">
+                      <mat-icon style="color: white;">menu</mat-icon>
+                    </button> 
+                 
+                    
+                      <h6 style="color: white;">
+                      
+                          ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+
+                    <span class="toolbar-spacer"></span>
+                    <button  mat-raised-button style="background-color: white;"
+              matBadge="3" matBadgePosition="after" matBadgeColor="accent">
+            Notifications
+            </button>
+            <button  routerLink="/login"  mat-raised-button style="background-color: white; margin-left: 10px;">
+              LOGIN
+              </button>
+                 
+                    
+                  </mat-toolbar>
+                  <div class="main-content">
+
+   <div class="row">
+       <div class="container col-sm-7">
+                <h4> Add Salary Component Group </h4>
+            <!-- <p>
+            <mat-form-field appearance="outline">
+             <mat-label>Name</mat-label>
+             <input matInput placeholder="Name" id="name"  [(ngModel)]="formulas.name" name="name">
+            </mat-form-field>
+            </p> -->
+            <p>
+            <mat-form-field appearance="outline">
+             <mat-label>Code</mat-label>
+             <input matInput placeholder="Code" id="code" [(ngModel)]="formulas.code" name="code">
+            </mat-form-field>
+            </p>
+          <!----  <p>
+            <mat-form-field appearance="outline">
+            <mat-select placeholder="Type"  name="name"  [(ngModel)]="yearMonths.name" (ngModelChange)="SearchYear(yearMonths.name)" >
+             <mat-option  *ngFor="let prod of yearMonths">{{prod.name}}</mat-option>
+            
+            </mat-select>
+
+            </mat-form-field>
+
+            </p>
+           
+          -->
+       
+              <mat-label><h6> Choose Type </h6></mat-label>
+            <select  [(ngModel)]="yearMonths.name" (ngModelChange)="SearchYear(yearMonths.name)" > 
+                <option *ngFor="let prod of yearMonths">{{prod.name}}</option>  
+            </select>
+          
+            <table>
+              <tr  *ngFor="let Prod of YearDetails4" >
+                <td>
+ 
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr *ngFor="let Prod of YearDetails3" >
+            
+                <td>
+                    <mat-form-field appearance="outline">
+                     <mat-label>Deduction</mat-label>
+                     <input matInput placeholder="Deduction" id="Deduction" [(ngModel)]="formulas.type" name="Deduction">
+                    </mat-form-field>
+                </td>
+              </tr>
+            </table>
+     
+              <table>
+            
+                <tr *ngFor="let Prod of YearDetails" >
+                  <td><input type="radio" value="Employee Provident Fund" id="1"  [(ngModel)]="formulas.type" name="Employee Provident Fund">Employee Provident Fund</td> 
+                  <td><input type="radio" value="Employer Provident Fund" id="2"  [(ngModel)]="formulas.type" name="Employer Provident Fund">Employer Provident Fund</td> 
+                  <td><input type="radio" value="Professional Tax" id="3"  [(ngModel)]="formulas.type" name="Professional Tax">Professional Tax</td> 
+                  <td><input type="radio" value="Employee ESIC" id="4"  [(ngModel)]="formulas.type" name="Employee ESIC">Employee ESIC</td> 
+                  <td><input type="radio" value="Employer ESIC" id="5"  [(ngModel)]="formulas.type" name="Employer ESIC">Employer ESIC</td> 
+                </tr>  
+              </table>
+            <br>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="paid" id="paid"  [(ngModel)]="formulas.paid" name="paid">
+              <label class="form-check-label" for="paid">
+                      Piad Component Module
+              </label> </div>
+  
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="taxable" id="taxable"  [(ngModel)]="formulas.taxable" name="taxable" data-md-icheck (change)="toggleVisibility($event)"/>
+                        <label class="form-check-label" for="taxable">
+                                Taxable
+                        </label> 
+           
+                      </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="attendancebased" id="attendancebased"   [(ngModel)]="formulas.attendancebased" name="attendancebased">
+                        <label class="form-check-label" for="attendancebased">
+                                Attendance Dependent
+                        </label></div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="included" id="included" [(ngModel)]="formulas.included" name="included" >
+                        <label class="form-check-label" for="included">
+                                Part Of CTC
+                        </label>
+                      </div>
+                      <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="isactive" id="isactive" [(ngModel)]="formulas.isactive" name="isactive">
+                            <label class="form-check-label" for="isactive">
+                                    Enable 
+                            </label> </div>
+                            <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="tax" id="tax" [(ngModel)]="formulas.tax" name="tax">
+                              <label class="form-check-label" for="tax">
+                                Deduct Before Tax Calculation 
+                              </label> </div>  
+                            
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="balance" id="balance" [(ngModel)]="formulas.balance" name="balance" >
+                            <label class="form-check-label" for="balance">
+                                    Adjust Balance Amount to this Item
+                            </label>
+                           </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="" [(ngModel)]="formulas.ff" name="testamount" >
+                                <label class="form-check-label" for="">
+                                    Recurring / OneTime
+                                </label>
+                                   </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="special" id="special" [(ngModel)]="formulas.special" name="special" >
+                                    <label class="form-check-label" for="special">
+                                      Special Component (Check this If you have special component like Daily, Hourly or Unit Based)
+                                    </label>
+                                 </div>
+                                 <!----
+                                      <p>
+                                                <mat-form-field appearance="outline">
+                                                      <mat-label>Calculation Type</mat-label>
+                                              <mat-select placeholder="Calculation Type">
+                                              <mat-option value="fixed">Fixed</mat-option>
+                                              <mat-option value="Formula">Formula</mat-option>
+                                              </mat-select>
+                                              </mat-form-field> </p> --->
+
+                                              <br>
+                                              <mat-label><h6> Calculation Type</h6></mat-label>
+                                              <select  [(ngModel)]="for.name1" (ngModelChange)="SearchYear(for.name1)"> 
+                                                  <option *ngFor="let prod of for">{{prod.name}}</option>  
+                                              </select>  
+
+                                              <table>
+                                                  <tr *ngFor="let Prod of for4" >
+                                                
+                                                    <td>
+                                                        <mat-form-field appearance="outline">
+                                                         <mat-label>Value/Formula</mat-label>
+                                                         <input matInput placeholder="Value" id="Value" [(ngModel)]="formulas.Value" name="Value">
+                                                        </mat-form-field>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+
+                                                <table>
+                                                    <tr *ngFor="let Prod of for5" >
+                                                  
+                                                          <mat-form-field appearance="outline">
+                                                           <mat-label>value/Formula</mat-label>
+                                                           <input matInput placeholder="Value" id="Value" [(ngModel)]="formulas.Value" name="Value">
+                                                          </mat-form-field>
+                                                            <br>
+                                                          <mat-form-field appearance="outline">
+                                                              <mat-label>Max Amount</mat-label>
+                                                             <input matInput placeholder="Max Amount" id="max"  name="max">
+                                                            </mat-form-field>
+                                                            &nbsp;
+                                                             <mat-form-field appearance="outline">
+                                                              <mat-label>Min Amount</mat-label>
+                                                             <input matInput placeholder="Min Amount" id="min"  name="min">
+                                                            </mat-form-field>
+                                                     
+                                                     
+                                                    </tr>
+
+                                                  </table>
+                                                  
+                                             <br>
+
+
+                                            <!----            <p>
+                                                        <mat-form-field appearance="outline">
+                                                                <mat-label>Value/Formula</mat-label>
+                                                                <input matInput placeholder="Value/Formula" [(ngModel)]="formulas.Value" name="Value">
+                                                                
+                                                              </mat-form-field> &nbsp;  
+                                                     
+                                                              <mat-form-field appearance="outline">
+                                                                    <mat-label>Min Amount</mat-label>
+                                                                    <input matInput placeholder="Placeholder">
+                                                                    
+                                                                  </mat-form-field>&nbsp;
+                                                   
+                                                                  <mat-form-field appearance="outline">
+                                                                        <mat-label>Max Amount</mat-label>
+                                                                        <input matInput placeholder="Max Amount">
+                                                                        
+                                                                </mat-form-field>
+                                                      </p> --->
+                <button mat-raised-button color="primary"(click)="saveformula()">Submit</button>
+
+               
+             
+          </div>
+
+
+
+
+        <div class="col-sm-4 shadow-lg  bg-white rounded">
+                        <h6>Code: </h6> Unique code identify Type of Salary. For example HRA(House Rent Allowance), BASIC(Basic Salary). <h6>Note: If its Basic or House Rent allowance then please keep Code as BASIC or HRA </h6>
+                
+                        <h6>Type:</h6>  Type of Salary Head. Choose any one from following
+                       <h6>1. Earnings: </h6> If Salary head is Earning for Employee and part of CTC. Like Basic, DA etc.
+                      <h6> 2. OverTime: </h6>If Employee make some money by doing Overtime.(Note: This will be taxable).Please Select "Taxable" Column.
+                      <h6> 3. Reimbursement:</h6> Neither a Earning nor a Deduction. This is amount that employee spend for Organization during job. Note This will not be a "Taxable"
+                        
+                       <h6>Taxable: </h6> Tell us that do we need to included this item amount for taxable income or not
+                        
+                        <h6>Attendance Dependent: </h6> If this is selected then this component amount will be calculated accoding to Number of days worked by employee.
+                        Ex. Amount 1200
+                         Days in Month = 30
+                        Loss Pay Days = 2
+                         Net Amount would be 1200 / 30 * (30 - 2) = 1120
+                        
+                        <h6>Part Of CTC:</h6> If this is selected than this component amount will be consider as CTC amount. while calculating Monthly Salary
+                        
+                      <h6>  Enable: </h6> Select this to make this item Active. Otherwise it will be ignore at the time of calculating Monthly Salary
+                        
+                    <h6> Deduct Before Tax Calculation: </h6> Deduction that should not included in Taxable Income
+                        
+                      <h6>  Adjust Balance Amount to this Item: </h6>Select this if this will be consider as Balanced Item to show balanced amount after calculating all other item.
+                        
+                      <h6>  Calculation Type: </h6> Can be Fixed or Formula. Select if its Fixed amount item
+                        
+                      <h6> Value/Formula: </h6> Make it 0 if you want to enter amount at the time creating payslip for employee. Otherwise fill be right amount if its fixed or Formula if its Formula field.
+                        Ex. Formula:- {{BASIC}} * 50 / 100. Means this item will be 50% of BASIC item.
+          </div>
+        
+</div>

@@ -1,0 +1,18 @@
+container-fluid{
+    display:flex;
+    flex-direction: column;
+   
+    
+}
+.container-fluid > * {
+    width: 30%;
+    padding-top:10px;
+   
+  }
+
+
+th{
+  text-align:center;
+  background-color:#c7c9c9;
+  color:#212121;
+}

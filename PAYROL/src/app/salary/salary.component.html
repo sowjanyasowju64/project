@@ -1,0 +1,66 @@
+
+<div class="main-content">
+          <div class="btun">
+              Salary Component Groups   
+              <button  style="float: right; margin-left: 10px; margin-bottom: 10px;" mat-raised-button color="primary" routerLink="/salary-group">New</button> 
+             
+        </div> 
+             
+  <table class="table table-bordered " >
+  
+      <tr>
+          <th scope="col"> Name</th>
+          <th scope="col"> Code</th>
+          <th scope="col">Description</th>
+          <th scope="col">Show Salary Components</th>
+          <th scope="col">Action</th>
+      </tr>
+          <tbody *ngFor="let sal of salarys">
+           <tr>
+              <td>{{sal.name}}</td>
+              <td>{{sal.code}}</td>
+              <td>{{sal.description}}</td>
+              <td> <a class="a" routerLink="/salary1">Show Components</a></td>
+              <td> <a class="a" routerLink="/salary">Edit</a></td>
+            </tr>
+          
+          </tbody>
+        </table>  
+      
+        
+      </div>
+    
+
+  
+
+<!----
+
+<div class="container">
+    <div class="btun">
+            Salary Component Groups   
+            <button  style="float: right; margin-left: 10px; margin-bottom: 10px;" mat-raised-button color="primary" routerLink="/salary-group">New</button> 
+           
+      </div> 
+           
+<table class="table table-bordered " >
+
+    <tr>
+        <th scope="col"> Name</th>
+        <th scope="col"> Code</th>
+        <th scope="col">Description</th>
+        <th scope="col">Show Salary Components</th>
+        <th scope="col">Action</th>
+    </tr>
+        <tbody *ngFor="let sal of salarys">
+         <tr>
+            <td>{{sal.name}}</td>
+            <td>{{sal.code}}</td>
+            <td>{{sal.description}}</td>
+            <td> <a routerLink="/salary1">Show Components</a></td>
+            <td> <a routerLink="/salary">Edit</a></td>
+          </tr>
+        
+        </tbody>
+      </table>
+      </div> 
+    -->

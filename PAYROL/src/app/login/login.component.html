@@ -1,0 +1,53 @@
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: #08849C;">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon style="color: white;">menu</mat-icon>
+      </button>
+      <h6 style="color: white;">
+
+        ENVISION INTEGRATED SERVICES PVT.LTD </h6>
+
+      <span class="toolbar-spacer"></span>
+     
+     
+    </mat-toolbar>
+    <div class="main-content">
+      
+
+      
+<mat-card class="example-card">
+<mat-card-header>
+  <mat-card-title>Login</mat-card-title>
+</mat-card-header>
+<mat-card-content>
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+            <i class="fa fa-user-circle" aria-hidden="true" style="color: rgb(0, 195, 255);"></i> &nbsp;
+          <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username" [(ngModel)]="user.username" name="username" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+      <td><mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" [(ngModel)]="user.password"type="password" name="password" required>
+      </mat-form-field></td>
+    </tr>
+    <tr>
+     <td> <button mat-raised-button (click)="submit()" color="primary">Login</button><a style="color:rgb(111, 111, 175);margin-left:10px;" routerLink="/forgotpassword">Forgot Password</a></td>
+    
+    </tr>
+  </table>
+  </form>
+  <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+</mat-card-content>
+
+</mat-card>
+    </div>
+  
+  </mat-sidenav-content>
+</mat-sidenav-container>

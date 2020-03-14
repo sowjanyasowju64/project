@@ -1,0 +1,60 @@
+
+<div >  
+    Select Financial Year:  
+    <select  [(ngModel)]="YearHeader.name" (ngModelChange)="SearchYear(YearHeader.name)">  
+         <option *ngFor="let prod of YearHeader">{{prod.name}} </option>  
+     </select>  
+  
+  
+  
+  <div *ngIf="YearHeader.name">  
+  <h5>You have selected: {{YearHeader.name}} Year </h5>  
+  </div>  
+  </div>  
+  <div >  
+  <h4>Year Details:</h4>  
+  <!-- <table class="table table-bordered" id="content" #content >   -->
+    <table class="table table-bordered" id="contentToConvert">
+  <tr >   
+  <th>S.NO</th> <th>Month</th>  
+  
+  <th>CTC</th>    <th>Variable Pay</th> <th>GraceAmount+Non Taxable</th> <th>Loss of Pay</th> 
+  <th>Tax Amount</th>  <th>NetPayable</th>  <th>Working Days</th> <th>LOP Days</th> <th>Detail</th> <th>Edit</th>
+  </tr>  
+  <tr  *ngFor="let Prod of YearDetails; let i=index ">  
+    <td>{{i+1}}</td>
+   
+  <td>{{Prod.month}}</td>  
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td></td> 
+  <td> <button type="button" class="btn btn-outline-success">Detail</button></td> 
+
+
+  <td><button  type="button" class="btn btn-outline-info">Edit</button></td>
+  
+  
+  </tr>  
+  
+  </table>  
+  
+  </div>  
+  <!-- <button (click)="downloadPDF()">Export To PDF</button> -->
+  <div id="content" #content>  
+  
+   
+    <div style="float:right;margin-right:10px;">  
+      <button type="button" value="PDF"  class="btn btn-primary" (click)="captureScreen()">PDF</button>
+    </div>  
+  
+  </div> 
+  
+
+  
+  
+  

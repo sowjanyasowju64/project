@@ -1,0 +1,80 @@
+
+<table class=" table table-bordered" *ngFor="let use of user">
+
+        <thead>
+              <tr class="table table-info ">
+                      <th colspan="2">
+                            <h6 style="text-align: center;">Personal Data</h6>  
+                      </th>   
+              </tr> 
+            <tr class="table table-info "> 
+                <th>Personal</th>
+                <th>Details</th>
+             
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <tr>
+                <td>first Name</td>
+                <td>{{use.firstname}}</td>
+            </tr>
+ 
+            <tr>
+                <td>Last Name </td>
+                <td>{{use.lastname}}</td>
+            </tr>
+            <tr>
+                    <td>Gender </td>
+                    <td>{{use.gender}}</td>
+            </tr>
+            <tr>
+                    <td>Age</td>
+                    <td>{{use.age}}</td>
+            </tr>
+            <tr>
+                    <td>Last Name </td>
+                    <td>{{use.dob}}</td>
+            </tr>
+            <tr>
+                    <td>Blood</td>
+                    <td>{{use.Blood}}</td>
+            </tr>
+            <tr>
+                    <td>marital Status</td>
+                    <td>{{use.marital}}</td>
+            </tr>
+            <tr>
+                    <td>Phone Number</td>
+                    <td>{{use.phonenumber}}</td>
+            </tr>
+            <tr>
+                    <td>email</td>
+                    <td>{{use.email}}</td>
+            </tr>
+            <tr>
+                    <td>Emergency No</td>
+                    <td>{{use.enumber}}</td>
+            </tr>
+            <tr>
+                    <td>Permant Address</td>
+                    <td>{{use.paddress}}</td>
+            </tr>
+            <tr>
+                    <td>present Address </td>
+                    <td>{{use.presentaddress}}</td>
+            </tr>
+            <tr>
+                    <td>Pan Number</td>
+                    <td>{{use.pan}}</td>
+            </tr>
+            <tr>
+                    <td>Aadhaar Number</td>
+                    <td>{{use.aadhaar}}</td>
+            </tr>
+            <tr>
+                    <td>Driving Licence Number </td>
+                    <td>{{use.licence}}</td>
+            </tr>
+        </tbody>
+    </table>

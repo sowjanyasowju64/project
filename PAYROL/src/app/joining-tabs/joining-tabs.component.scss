@@ -1,0 +1,36 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+    padding-top:20px;
+    padding-left: 40%;
+  
+ 
+    
+  }
+  section{
+    padding:10px;
+  }
+  img{
+
+    height:10%;
+    width:100%;
+     
+   }
+  //  .fixed{
+  //    position: fixed;
+  //  }
+  // .mat-toolbar{
+   
+  //   position: fixed;
+  // }
+  // .main-content{
+  //   margin-top:58px;
+  // }
+  // .mat-tab{
+  //   position:fixed !important;
+  // }
+ 
